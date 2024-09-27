@@ -1,18 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        'custom-green': '#40A578'
+        "custom-green": "#40A578",
+        "button-bg": " #9DDE8B",
+        "button-hover-bg": "#40A578",
+        "div-hover-bg": "#EFFFEB",
       },
       borderRadius: {
-        '4xl': '2rem'
-      }
+        "4xl": "2rem",
+      },
     },
   },
   plugins: [],
-}
+};
