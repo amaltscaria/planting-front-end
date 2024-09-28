@@ -1,5 +1,7 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../../store/UserContext";
+import { TreesContext } from "../../../store/TreeContext";
+import { useNavigate } from "react-router-dom";
 import "./Certificate.css";
 import bg from "../../assets/Background.svg";
 import downloadLight from "../../assets/downloadLight.svg";
@@ -25,12 +27,21 @@ import CertificateContent from "./CertificateContent";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { formatDate } from "../../../utils/formatDate";
+import {generateCertificateNumber} from '../../../utils/uniqueCertificateNumber';
+import { downloadAsPDF } from "../../../utils/downloadAsPdf";
+import {downloadAsJPG} from '../../../utils/downloadAsJPG';
+
+export const date = formatDate(new Date());
+export const id = generateCertificateNumber();
 
 const Certificate = () => {
   const { user } = useContext(UserContext);
+  const {numberOfTrees} = useContext(TreesContext);
   const [shareUrl, setShareUrl] = useState(
     "http://localhost:3001/uploads/3453434342.jpg"
   );
+  const navigate = useNavigate();
   const [fbHover, setFbHover] = useState(false);
   const [xHover, setXHover] = useState(false);
   const [linkedinHover, setLinkedinHover] = useState(false);
@@ -42,6 +53,23 @@ const Certificate = () => {
     navigator.clipboard.writeText(shareUrl);
     window.open("https://www.instagram.com/direct/inbox/", "_blank");
   };
+  useEffect(() => {
+    const handleBeforeUnload = (event) => {
+      event.preventDefault();
+      event.returnValue = ""; // Most modern browsers require this to show the alert
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
+  useEffect(()=>{
+    if(!user.name){
+      navigate('/')
+    }
+  })
   return (
     <div
       style={{ backgroundImage: `url(${bg})` }}
@@ -51,15 +79,19 @@ const Certificate = () => {
         <h1 className="text-white text-4xl lg:text-7xl sm:text-5xl whitespace-pre-line outfit-extrabold ml-7">
           Download{"\n"}Tree Planting{"\n"}Certificate
         </h1>
-        <div className="flex gap-2 ml-7 pt-6">
+        <div className="flex gap-2 ml-7 pt-10">
           <div className="flex justify-center">
-            <button className="bg-button-bg outfit-regular hover:bg-button-hover-bg rounded-3xl w-24 h-8 text-center flex justify-around items-center text-white">
+            <button className="bg-button-bg outfit-regular hover:bg-button-hover-bg rounded-3xl w-24 h-8 text-center flex justify-around items-center text-white"
+            onClick={()=>downloadAsPDF(user.name, numberOfTrees)}
+            >
               PDF
               <img src={downloadLight} alt="Download" className="w-3 h-3" />
             </button>
           </div>
           <div className="flex justify-center">
-            <button className="bg-button-bg outfit-regular hover:bg-button-hover-bg rounded-3xl w-24 h-8 text-center flex justify-around items-center text-white">
+            <button className="bg-button-bg outfit-regular hover:bg-button-hover-bg rounded-3xl w-24 h-8 text-center flex justify-around items-center text-white"
+            onClick={()=>downloadAsJPG(user.name, numberOfTrees)}
+            >
               JPEG
               <img src={downloadLight} alt="Download" className="w-3 h-3" />
             </button>
@@ -73,19 +105,19 @@ const Certificate = () => {
             </a>
           </div>
         </div>
-        <div className="ml-7 pt-6 text-white">
+        <div className="ml-7 pt-10 text-white">
           <p className="outfit-extrabold">Instant Share</p>
           <div className="flex gap-2">
             <p className="bg-button-bg rounded-3xl outfit-regular h-8 text-center overflow-hidden whitespace-nowrap text-ellipsis w-52 flex items-center px-3">
               https://locahost:3001/upfdfdfdfdfloads
             </p>
-            <button className="bg-button-bg hover:bg-button-hover-bg rounded-full px-2">
+            <button className="bg-button-bg hover:bg-button-hover-bg rounded-full p-2">
               <img src={copyButton} alt="" className="w-5 h-4" />
             </button>
           </div>
         </div>
         <div className="ml-7">
-          <p className="pt-6 outfit-extrabold text-white">Social Share</p>
+          <p className="pt-10 outfit-extrabold text-white">Social Share</p>
           <div className="flex gap-3">
             <FacebookShareButton
               url={shareUrl}
@@ -95,7 +127,7 @@ const Certificate = () => {
               <img
                 src={fbHover ? facebookIconDark : facebookIcon}
                 alt="Facebook"
-                className="w-12"
+                className="w-8"
               />
             </FacebookShareButton>
             <TwitterShareButton
@@ -106,7 +138,7 @@ const Certificate = () => {
               <img
                 src={xHover ? twitterIconDark : twitterIcon}
                 alt="X"
-                className="w-12"
+                className="w-8"
               />
             </TwitterShareButton>
             <LinkedinShareButton
@@ -117,7 +149,7 @@ const Certificate = () => {
               <img
                 src={linkedinHover ? linkedinIconDark : linkedinIcon}
                 alt="LinkedIn"
-                className="w-12"
+                className="w-8"
               />
             </LinkedinShareButton>
             <WhatsappShareButton
@@ -128,7 +160,7 @@ const Certificate = () => {
               <img
                 src={wpHover ? whatsappIconDark : whatsappIcon}
                 alt="WhatsApp"
-                className="w-12 whatsapp-icon"
+                className="w-8 whatsapp-icon"
               />
             </WhatsappShareButton>
             <button
@@ -139,7 +171,9 @@ const Certificate = () => {
               <img
                 src={instaHover ? instagramIconDark : instagramIcon}
                 alt="Instagram"
-                className="w-12"
+                className="w-8
+                
+                "
               />
             </button>
           </div>

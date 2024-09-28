@@ -8,6 +8,7 @@ export default {
         "button-bg": " #9DDE8B",
         "button-hover-bg": "#40A578",
         "div-hover-bg": "#EFFFEB",
+        "line": "#9DDE8A"
       },
       borderRadius: {
         "4xl": "2rem",

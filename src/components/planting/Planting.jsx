@@ -4,10 +4,12 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Tree from "../Tree/Tree";
 import { handlePayment } from "../../../utils/payment";
+import { TreesContext } from "../../../store/TreeContext";
 
 const Planting = () => {
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
+  const {setNumberOfTrees} = useContext(TreesContext);
   const [selectedTreeCount, setSelectedTreeCount] = useState(null);
   const [customTreeCount, setCustomTreeCount] = useState(101);
   const [errors, setError] = useState({});
@@ -28,8 +30,6 @@ const Planting = () => {
   };
 
   const handlePlantTrees = async () => {
-    // navigate('/certificate');
-    // return;
     if (selectedTreeCount === null) {
       setError({ error: "Please select the desired option!!!" });
       return;
@@ -46,6 +46,9 @@ const Planting = () => {
     }
     const finalTreeCount =
       selectedTreeCount === "other" ? +customTreeCount : +selectedTreeCount;
+      setNumberOfTrees(finalTreeCount);
+      navigate('/certificate');
+      return;
     const rzp1 = await handlePayment(
       finalTreeCount,
       user.name,
