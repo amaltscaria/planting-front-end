@@ -3,6 +3,7 @@ import { UserContext } from "../../../store/UserContext.jsx";
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Tree from "../Tree/Tree";
+import { handlePayment } from "../../../utils/payment";
 
 const Planting = () => {
   const navigate = useNavigate();
@@ -10,11 +11,12 @@ const Planting = () => {
   const [selectedTreeCount, setSelectedTreeCount] = useState(null);
   const [customTreeCount, setCustomTreeCount] = useState(101);
   const [errors, setError] = useState({});
+  const [paymentStatus, setPaymentStatus] = useState(false);
   useEffect(() => {
     if (!user.name) {
       navigate("/");
     }
-  }, []);
+  }, [user, navigate]);
   const handleInputChange = (e) => {
     const { value } = e.target;
     setCustomTreeCount(value);
@@ -25,7 +27,9 @@ const Planting = () => {
     setError({});
   };
 
-  const handlePlantTrees = () => {
+  const handlePlantTrees = async () => {
+    // navigate('/certificate');
+    // return;
     if (selectedTreeCount === null) {
       setError({ error: "Please select the desired option!!!" });
       return;
@@ -34,23 +38,37 @@ const Planting = () => {
       if (selectedTreeCount === "other") {
         if (+customTreeCount < 101 || +customTreeCount > 100000) {
           setError({ error: "Please Select a value between 101 and 100000" });
+          return;
         } else {
           setError({});
         }
       }
     }
     const finalTreeCount =
-      selectedTreeCount === "other" ? +customTreeCount : selectedTreeCount;
+      selectedTreeCount === "other" ? +customTreeCount : +selectedTreeCount;
+    const rzp1 = await handlePayment(
+      finalTreeCount,
+      user.name,
+      user.email,
+      user.number,
+      user.address,
+      setPaymentStatus
+    );
+    rzp1.open();
   };
+
+  // useEffect to navigate to certificate once paymentStatus is updated
+  useEffect(() => {
+    if (paymentStatus) {
+      navigate("/certificate");
+    }
+  }, [paymentStatus, navigate ]); // this effect triggers when paymentStatus changes
   return (
     <PageLayout>
       <div className="text-white">
         <p className="text-center mb-6">How many trees do you want to plant?</p>
         <div className="mb-6">
-          {/* <div className="flex gap-5 round mb-6">
-           */}
-           <div className="grid grid-cols-2 gap-5 round mb-6 md:grid-cols-3">
-
+          <div className="grid grid-cols-2 xs:ml-0 ml-8 gap-5 round mb-6 md:grid-cols-3">
             <Tree
               treeCount={5}
               isSelected={selectedTreeCount === 5}
@@ -66,7 +84,6 @@ const Planting = () => {
               isSelected={selectedTreeCount === 25}
               clickEvent={() => hanldeTreeSelection(25)}
             ></Tree>
-          {/* <div className="flex gap-5 round"> */}
 
             <Tree
               treeCount={50}

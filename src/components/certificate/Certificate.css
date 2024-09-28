@@ -1,0 +1,9 @@
+.whatsapp-icon:hover rect {
+    fill: red; /* Change the fill color on hover */
+  }
+  
+  .whatsapp-icon:hover path {
+    fill: red; /* You can change the fill of the path on hover as well */
+  }
+  
+  

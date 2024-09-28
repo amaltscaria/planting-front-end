@@ -12,6 +12,9 @@ export default {
       borderRadius: {
         "4xl": "2rem",
       },
+      screens: {
+        xs: '300px', // Adjust the size as per your needs
+      },
     },
   },
   plugins: [],
