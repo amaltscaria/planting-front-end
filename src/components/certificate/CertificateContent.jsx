@@ -8,14 +8,13 @@ import collegeLogo from "../../assets/We Grow Forest College - Logo.png";
 import carbonZero from "../../assets/Carbon Zero Day - Logo.png";
 import cleanShore from "../../assets/Sea of Change - Logo.png";
 import engo from "../../assets/Engoi - Logo.png";
-import qr from '../../assets/qr.svg'
+import qr from "../../assets/qr.svg";
 import { TreesContext } from "../../../store/TreeContext";
-import { date } from "./Certificate";
+import { date, id } from "./certificate.jsx";
 
 const CertificateContent = () => {
-
-  const {user} = useContext(UserContext);
-  const {numberOfTrees} = useContext(TreesContext)
+  const { user } = useContext(UserContext);
+  const { numberOfTrees } = useContext(TreesContext);
   return (
     <div className="flex justify-center items-center">
       <div
@@ -58,7 +57,7 @@ const CertificateContent = () => {
         <p className="outfit-extrabold text-sm mt-2 text-button-hover-bg uppercase">
           {date}
         </p>
-        <p className="outfit-medium text-sm">[Unique Certificate Number]</p>
+        <p className="outfit-medium text-sm">{id.toUpperCase()}</p>
         <div className="flex mt-4 gap-6">
           <div className="flex flex-col items-end">
             <img src={meeraSign} alt="" className="w-20 h-5" />
@@ -91,32 +90,49 @@ const CertificateContent = () => {
         <div className="flex mt-4 justify-between w-full">
           <div className="flex flex-col justify-center items-center">
             <img src={collegeLogo} alt="" className="w-16 h-16" />
-            <a href="https://www.wegrowforest.college/" className="text-[9px] text-center mt-1">
+            <a
+              href="https://www.wegrowforest.college/"
+              className="text-[9px] text-center mt-1"
+            >
               www.wegrowforest.college
             </a>
           </div>
           <div className="flex flex-col justify-center items-center">
             <img src={carbonZero} alt="" className="w-36 h-16" />
-            <a href="https://www.carbonzero.day/" className="text-[9px] text-center mt-1">
+            <a
+              href="https://www.carbonzero.day/"
+              className="text-[9px] text-center mt-1"
+            >
               www.carbonzero.day
             </a>
           </div>
           <div className="flex flex-col justify-center items-center">
             <img src={cleanShore} alt="" className="w-16 h-16" />
-            <a href="https://seaofchange.in/" className="text-[9px] text-center mt-1">
+            <a
+              href="https://seaofchange.in/"
+              className="text-[9px] text-center mt-1"
+            >
               www.seaofchange.in
             </a>
           </div>
           <div className="flex flex-col justify-center items-center">
             <img src={engo} alt="" className="w-12 h-16" />
-            <a href="https://engoi.org/" className="text-[9px] text-center mt-1">
+            <a
+              href="https://engoi.org/"
+              className="text-[9px] text-center mt-1"
+            >
               www.engoi.org
             </a>
           </div>
         </div>
         <div className="mt-2 flex flex-col justify-center items-center">
           <img src={qr} alt="" className="w-16 h-20" />
-          <a href="https://www.wegrowforest.org/" className="text-button-hover-bg text-[9px]">www.wegrowforest.org</a>
+          <a
+            href="https://www.wegrowforest.org/"
+            className="text-button-hover-bg text-[9px]"
+          >
+            www.wegrowforest.org
+          </a>
         </div>
       </div>
     </div>

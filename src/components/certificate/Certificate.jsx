@@ -28,16 +28,17 @@ import CertificateContent from "./CertificateContent";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { formatDate } from "../../../utils/formatDate";
-import {generateCertificateNumber} from '../../../utils/uniqueCertificateNumber';
+import { generateCertificateNumber } from "../../../utils/uniqueCertificateNumber";
 import { downloadAsPDF } from "../../../utils/downloadAsPdf";
-import {downloadAsJPG} from '../../../utils/downloadAsJPG';
+import { downloadAsJPG } from "../../../utils/downloadAsJPG";
+import { shareJPG } from "../../../utils/shareJPG";
 
 export const date = formatDate(new Date());
 export const id = generateCertificateNumber();
 
 const Certificate = () => {
   const { user } = useContext(UserContext);
-  const {numberOfTrees} = useContext(TreesContext);
+  const { numberOfTrees } = useContext(TreesContext);
   const [shareUrl, setShareUrl] = useState(
     "http://localhost:3001/uploads/3453434342.jpg"
   );
@@ -53,6 +54,37 @@ const Certificate = () => {
     navigator.clipboard.writeText(shareUrl);
     window.open("https://www.instagram.com/direct/inbox/", "_blank");
   };
+  
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(shareUrl).then(
+      () => {
+        toast.success("URL copied to clipboard!", {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      },
+      (err) => {
+        toast.error("Failed to copy URL!", {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+        console.error("Failed to copy text: ", err);
+      }
+    );
+  };
+
   useEffect(() => {
     const handleBeforeUnload = (event) => {
       event.preventDefault();
@@ -65,11 +97,40 @@ const Certificate = () => {
       window.removeEventListener("beforeunload", handleBeforeUnload);
     };
   }, []);
-  useEffect(()=>{
-    if(!user.name){
-      navigate('/')
+  useEffect(() => {
+    if (!user.name) {
+      navigate("/");
     }
-  })
+  });
+  useEffect(() => {
+    const sendCertificate = async () => {
+      const imgData = await shareJPG(user.name, numberOfTrees);
+
+      // Send to backend
+      try {
+        const response = await fetch("http://localhost:3001/api/upload-certificate", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ image: imgData }),
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        const data = await response.json();
+        setShareUrl(data.filePath);
+        console.log(data.filePath);
+      } catch (error) {
+        console.error("Error uploading certificate:", error);
+      }
+    };
+
+    sendCertificate();
+  }, []); // Run when name changes
   return (
     <div
       style={{ backgroundImage: `url(${bg})` }}
@@ -81,16 +142,18 @@ const Certificate = () => {
         </h1>
         <div className="flex gap-2 ml-7 pt-10">
           <div className="flex justify-center">
-            <button className="bg-button-bg outfit-regular hover:bg-button-hover-bg rounded-3xl w-24 h-8 text-center flex justify-around items-center text-white"
-            onClick={()=>downloadAsPDF(user.name, numberOfTrees)}
+            <button
+              className="bg-button-bg outfit-regular hover:bg-button-hover-bg rounded-3xl w-24 h-8 text-center flex justify-around items-center text-white"
+              onClick={() => downloadAsPDF(user.name, numberOfTrees)}
             >
               PDF
               <img src={downloadLight} alt="Download" className="w-3 h-3" />
             </button>
           </div>
           <div className="flex justify-center">
-            <button className="bg-button-bg outfit-regular hover:bg-button-hover-bg rounded-3xl w-24 h-8 text-center flex justify-around items-center text-white"
-            onClick={()=>downloadAsJPG(user.name, numberOfTrees)}
+            <button
+              className="bg-button-bg outfit-regular hover:bg-button-hover-bg rounded-3xl w-24 h-8 text-center flex justify-around items-center text-white"
+              onClick={() => downloadAsJPG(user.name, numberOfTrees)}
             >
               JPEG
               <img src={downloadLight} alt="Download" className="w-3 h-3" />
@@ -98,7 +161,7 @@ const Certificate = () => {
           </div>
 
           <div>
-            <a href="">
+            <a href="https://www.wegrowforest.org">
               <button className="bg-button-bg outfit-regular hover:bg-button-hover-bg rounded-3xl w-48 h-8 text-center flex justify-around items-center text-white">
                 www.wegrowforest.org
               </button>
@@ -109,9 +172,11 @@ const Certificate = () => {
           <p className="outfit-extrabold">Instant Share</p>
           <div className="flex gap-2">
             <p className="bg-button-bg rounded-3xl outfit-regular h-8 text-center overflow-hidden whitespace-nowrap text-ellipsis w-52 flex items-center px-3">
-              https://locahost:3001/upfdfdfdfdfloads
+              {shareUrl}
             </p>
-            <button className="bg-button-bg hover:bg-button-hover-bg rounded-full p-2">
+            <button className="bg-button-bg hover:bg-button-hover-bg rounded-full p-2"
+            onClick={copyToClipboard}
+            >
               <img src={copyButton} alt="" className="w-5 h-4" />
             </button>
           </div>
@@ -179,6 +244,8 @@ const Certificate = () => {
           </div>
         </div>
       </div>
+       {/* ToastContainer to render the toasts */}
+       <ToastContainer />
       <div>
         <CertificateContent></CertificateContent>
       </div>

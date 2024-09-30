@@ -47,8 +47,6 @@ const Planting = () => {
     const finalTreeCount =
       selectedTreeCount === "other" ? +customTreeCount : +selectedTreeCount;
       setNumberOfTrees(finalTreeCount);
-      navigate('/certificate');
-      return;
     const rzp1 = await handlePayment(
       finalTreeCount,
       user.name,

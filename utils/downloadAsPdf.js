@@ -135,14 +135,14 @@ export const downloadAsPDF = (name1, treeCount) => {
   const signatureStartY = 183; // Adjust this value to set the vertical position of the signatures
 
   // Dr. Meera Asmi's Signature and Information
-  pdf.addImage(meeraSign, "PNG", 55, signatureStartY, 40, 10); // Adjust x, y, width, and height for the signature image
+  pdf.addImage(meeraSign, "PNG", 56, signatureStartY, 40, 10); // Adjust x, y, width, and height for the signature image
   pdf.setTextColor("black").setFont("Outfit-ExtraBold", "bold");
-  pdf.setFontSize(13);
-  pdf.text("Dr Meera Asmi", 63, signatureStartY + 14); // Adjust x, y for the name
-  pdf.setFont("Outfit-Medium", "normal");
   pdf.setFontSize(12);
-  pdf.text("Chairwoman", 71, signatureStartY + 18); // Title
-  pdf.text("We Grow Forest Foundation", 42, signatureStartY + 22); // Organization
+  pdf.text("Dr Meera Asmi", 67, signatureStartY + 14); // Adjust x, y for the name
+  pdf.setFont("Outfit-Medium", "normal");
+  pdf.setFontSize(10);
+  pdf.text("Chairwoman", 76, signatureStartY + 18); // Title
+  pdf.text("We Grow Forest Foundation", 52, signatureStartY + 22); // Organization
 
   // Vertical Divider
   pdf.setDrawColor("#9DDE8A"); // Light green color for the line
@@ -152,10 +152,10 @@ export const downloadAsPDF = (name1, treeCount) => {
   // Dr. Merin Jacob's Signature and Information
   pdf.addImage(merinSign, "PNG", 114, signatureStartY, 40, 10); // Adjust x, y, width, and height for the signature image
   pdf.setTextColor("black").setFont("Outfit-ExtraBold", "bold");
-  pdf.setFontSize(13);
+  pdf.setFontSize(12);
   pdf.text("Dr Merin Jacob", 114, signatureStartY + 14); // Adjust x, y for the name
   pdf.setFont("Outfit-Medium", "normal");
-  pdf.setFontSize(12);
+  pdf.setFontSize(10);
   pdf.text("Managing Trustee", 114, signatureStartY + 18); // Title
   pdf.text("We Grow Forest Foundation", 114, signatureStartY + 22); // Organization
 
