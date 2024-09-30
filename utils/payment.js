@@ -10,7 +10,7 @@ export const handlePayment = async (
 ) => {
   console.log(treeCount);
   try {
-    const response = await axios.post("http://plant.wegrowforest.org/api/create/order", {
+    const response = await axios.post("https://plant.wegrowforest.org/api/create/order", {
       treeCount,
     });
     const orderData = response.data;
@@ -66,7 +66,7 @@ const verifyPayment = async (
     razorpay_signature
   ) => {
     try {
-      const response = await axios.post("http://plant.wegrowforest.org/api/payment/verify", {
+      const response = await axios.post("https://plant.wegrowforest.org/api/payment/verify", {
         razorpay_order_id,
         razorpay_payment_id,
         razorpay_signature,

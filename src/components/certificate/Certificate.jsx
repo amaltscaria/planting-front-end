@@ -108,7 +108,7 @@ const Certificate = () => {
 
       // Send to backend
       try {
-        const response = await fetch("http://localhost:3001/api/upload-certificate", {
+        const response = await fetch("https://plant.wegrowforest.org/api/upload-certificate", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
