@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import LoginPage from "./components/Login/LoginPage.jsx";
+import LoginPage from "./components/login/LoginPage.jsx";
 import "./App.css";
 import Planting from "./components/planting/Planting.jsx";
 import Certifcate from "./components/Certificate/Certificate.jsx";
