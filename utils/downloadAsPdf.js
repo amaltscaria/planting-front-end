@@ -4,7 +4,7 @@ import logo from "../src/assets/We Grow Forest - Logo.png";
 import qr from "../src/assets/qr.png";
 import { registerFonts } from "./fonts/Outfit-Medium-normal";
 import { registerFonts2 } from "./fonts/Outfit-ExtraBold-bold";
-import { date, id } from "../src/components/Certificate/certificate";
+import { date, id } from "../src/components/certificate/Certificate.jsx";
 import merinSign from "../src/assets/Merin Sign.png";
 import meeraSign from "../src/assets/Meera Sign.png";
 import collegeLogo from "../src/assets/We Grow Forest College - Logo.png";
