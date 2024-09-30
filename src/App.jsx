@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LoginPage from "./components/Login/LoginPage";
 import "./App.css";
-import Planting from "./components/Planting/Planting.jsx";
+import Planting from "./components/planting/Planting.jsx";
 import Certifcate from "./components/Certificate/Certificate.jsx";
 import { UserProvider } from "../store/UserContext.jsx";
 import { TreesProvider } from "../store/TreeContext";
