@@ -10,7 +10,7 @@ import cleanShore from "../../assets/Sea of Change - Logo.png";
 import engo from "../../assets/Engoi - Logo.png";
 import qr from "../../assets/qr.svg";
 import { TreesContext } from "../../../store/TreeContext";
-import { date, id } from "./certificate.jsx";
+import { date, id } from "./Certificate.jsx";
 
 const CertificateContent = () => {
   const { user } = useContext(UserContext);
