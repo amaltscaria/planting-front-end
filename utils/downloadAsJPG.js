@@ -7,7 +7,7 @@ import collegeLogoImage from "../src/assets/We Grow Forest College - Logo.png";
 import cleanShoreLogoImage from "../src/assets/Sea of Change - Logo.png";
 import engoLogoImage from "../src/assets/Engoi - Logo.png";
 import carbonZeroLogoImage from "../src/assets/Carbon Zero Day - Logo.png";
-import { date, id } from "../src/components/Certificate/certificate";
+import { date, id } from "../src/components/certificate/Certificate";
 
 // Helper function to load an image and return a promise
 const loadImage = (src) => {
