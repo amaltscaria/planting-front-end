@@ -33,7 +33,7 @@ const LoginPage = () => {
     e.preventDefault();
     const { isValid, errors } = validateForm(formData);
     if (isValid) {
-      setUser({name:formData.name, email:formData.email, number: formData.number, address:formData.address});
+      setUser({name:formData.name, email:formData.email, number: formData.number, address:formData.address, country: formData.country});
       navigate("/plant-trees");
     } else {
       setErrors(errors);

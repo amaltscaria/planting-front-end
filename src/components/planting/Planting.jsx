@@ -9,7 +9,7 @@ import { TreesContext } from "../../../store/TreeContext";
 const Planting = () => {
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
-  const {setNumberOfTrees} = useContext(TreesContext);
+  const { numberOfTrees, setNumberOfTrees } = useContext(TreesContext);
   const [selectedTreeCount, setSelectedTreeCount] = useState(null);
   const [customTreeCount, setCustomTreeCount] = useState(101);
   const [errors, setError] = useState({});
@@ -18,7 +18,7 @@ const Planting = () => {
     if (!user.name) {
       navigate("/");
     }
-  }, [user, navigate]);
+  }, [user]);
   const handleInputChange = (e) => {
     const { value } = e.target;
     setCustomTreeCount(value);
@@ -46,7 +46,7 @@ const Planting = () => {
     }
     const finalTreeCount =
       selectedTreeCount === "other" ? +customTreeCount : +selectedTreeCount;
-      setNumberOfTrees(finalTreeCount);
+    setNumberOfTrees(finalTreeCount);
     const rzp1 = await handlePayment(
       finalTreeCount,
       user.name,
@@ -58,12 +58,37 @@ const Planting = () => {
     rzp1.open();
   };
 
-  // useEffect to navigate to certificate once paymentStatus is updated
   useEffect(() => {
     if (paymentStatus) {
       navigate("/certificate");
+
+      const sendFormData = async () => {
+        try {
+          const formDataObject = {};
+          formDataObject.name = user.name;
+          formDataObject.number = user.number;
+          formDataObject.address = user.address;
+          formDataObject.country = user.country;
+          formDataObject.email = user.email;
+          formDataObject.treeCount = numberOfTrees;
+          formDataObject.amount = numberOfTrees * 110;
+          await fetch(import.meta.env.VITE_GOOGLE_SHEET_WEB_URL, {
+            redirect: "follow",
+            method: "POST",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
+            },
+            body: new URLSearchParams(formDataObject).toString(),
+          });
+        } catch (error) {
+          console.error("Error sending form data:", error);
+          // Handle error appropriately
+        }
+      };
+
+      sendFormData();
     }
-  }, [paymentStatus, navigate ]); // this effect triggers when paymentStatus changes
+  }, [paymentStatus]); // Removed navigate from dependency array
   return (
     <PageLayout>
       <div className="text-white">
