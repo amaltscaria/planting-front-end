@@ -123,7 +123,6 @@ const Certificate = () => {
 
         const data = await response.json();
         setShareUrl(data.filePath);
-        console.log(data.filePath);
       } catch (error) {
         console.error("Error uploading certificate:", error);
       }
@@ -133,17 +132,17 @@ const Certificate = () => {
   }, []); // Run when name changes
   return (
     <div
-      style={{ backgroundImage: `url(${bg})` }}
-      className="bg-cover bg-left min-h-screen min-w-fit flex items-center justify-around flex-col lg:flex-row"
+      style={{ backgroundImage: `url(${bg})`,backgroundPosition: '12% 50%' }}
+      className="bg-cover bg-left min-h-screen min-w-fit flex items-center justify-around flex-col lg:flex-row pt-7 pb-7"
     >
-      <div>
-        <h1 className="text-white text-4xl lg:text-7xl sm:text-5xl whitespace-pre-line outfit-extrabold ml-7">
-          Download{"\n"}Tree Planting{"\n"}Certificate
+      <div className="md:mr-40 lg:mr-0">
+        <h1 className="text-white text-4xl lg:text-7xl sm:text-5xl whitespace-pre-line outfit-extrabold md:ml-7 ml-0">
+          Download{"\n"}Green Warrior{"\n"}Certificate
         </h1>
-        <div className="flex gap-2 ml-7 pt-10">
+        <div className="flex gap-2 md:ml-7 md:pt-10 pt-2">
           <div className="flex justify-center">
             <button
-              className="bg-button-bg outfit-regular hover:bg-button-hover-bg rounded-3xl w-24 h-8 text-center flex justify-around items-center text-white"
+              className="bg-button-bg outfit-regular hover:bg-button-hover-bg rounded-3xl md:w-24 w-16 md:text-base text-xs h-8 text-center flex justify-around items-center text-white"
               onClick={() => downloadAsPDF(user.name, numberOfTrees)}
             >
               PDF
@@ -152,7 +151,7 @@ const Certificate = () => {
           </div>
           <div className="flex justify-center">
             <button
-              className="bg-button-bg outfit-regular hover:bg-button-hover-bg rounded-3xl w-24 h-8 text-center flex justify-around items-center text-white"
+              className="bg-button-bg outfit-regular hover:bg-button-hover-bg rounded-3xl md:w-24 w-16 md:text-base text-xs h-8 text-center flex justify-around items-center text-white"
               onClick={() => downloadAsJPG(user.name, numberOfTrees)}
             >
               JPEG
@@ -162,16 +161,16 @@ const Certificate = () => {
 
           <div>
             <a href="https://www.wegrowforest.org">
-              <button className="bg-button-bg outfit-regular hover:bg-button-hover-bg rounded-3xl w-48 h-8 text-center flex justify-around items-center text-white">
+              <button className="bg-button-bg outfit-regular hover:bg-button-hover-bg rounded-3xl md:w-48 w-36 md:text-base text-xs h-8 text-center flex justify-around items-center text-white">
                 www.wegrowforest.org
               </button>
             </a>
           </div>
         </div>
-        <div className="ml-7 pt-10 text-white">
+        <div className="md:ml-7 md:pt-10 pt-2 text-white">
           <p className="outfit-extrabold">Instant Share</p>
           <div className="flex gap-2">
-            <p className="bg-button-bg rounded-3xl outfit-regular h-8 text-center overflow-hidden whitespace-nowrap text-ellipsis w-52 flex items-center px-3">
+            <p className="bg-button-bg rounded-3xl outfit-regular md:text-base text-xs h-8 text-center overflow-hidden whitespace-nowrap text-ellipsis w-52 flex items-center px-3">
               {shareUrl}
             </p>
             <button className="bg-button-bg hover:bg-button-hover-bg rounded-full p-2"
@@ -180,9 +179,10 @@ const Certificate = () => {
               <img src={copyButton} alt="" className="w-5 h-4" />
             </button>
           </div>
+          <p className="outfit text-xs mt-2">Please note that this link will expire in 10 days!</p>
         </div>
-        <div className="ml-7">
-          <p className="pt-10 outfit-extrabold text-white">Social Share</p>
+        <div className="md:ml-7">
+          <p className="md:pt-10 pt-2 outfit-extrabold text-white">Social Share</p>
           <div className="flex gap-3">
             <FacebookShareButton
               url={shareUrl}

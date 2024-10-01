@@ -81,7 +81,7 @@ const Planting = () => {
             body: new URLSearchParams(formDataObject).toString(),
           });
         } catch (error) {
-          console.error("Error sending form data:", error);
+          // console.error("Error sending form data:", error);
           // Handle error appropriately
         }
       };

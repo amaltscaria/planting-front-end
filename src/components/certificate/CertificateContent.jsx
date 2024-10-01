@@ -16,56 +16,56 @@ const CertificateContent = () => {
   const { user } = useContext(UserContext);
   const { numberOfTrees } = useContext(TreesContext);
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center mt-4">
       <div
         id="certificate"
-        className="sm:w-[597px] sm:h-[850px] rounded-4xl p-16 border-white border-8 flex flex-col items-center"
+        className="sm:w-[597px] sm:h-[850px] w-[350px] h-[500px] rounded-4xl md:p-16 p-8 border-white border-8 flex flex-col items-center"
         style={{
           backgroundImage: `url(${certificateBackgroundImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <img src={logo} alt="" className="w-24 h-24" />
-        <p className="text-button-hover-bg text-sm uppercase outfit-semibold mt-2">
+        <img src={logo} alt="" className="md:w-24 w-12 md:h-24 h-12" />
+        <p className="text-button-hover-bg md:text-sm text-xs uppercase outfit-semibold md:mt-2 mt-1">
           certificate of
         </p>
-        <h1 className="uppercase text-button-hover-bg outfit-extrabold text-2xl">
+        <h1 className="uppercase text-button-hover-bg outfit-extrabold md:text-2xl text-base">
           appreciation
         </h1>
-        <p className="outfit-regular mt-2 text-xs">
+        <p className="outfit-regular md:mt-2 md:text-xs text-[8px]">
           This certificate is awarded to
         </p>
-        <h2 className="uppercase text-xl text-button-hover-bg outfit-extrabold mt-2">
+        <h2 className="uppercase md:text-xl text-sm text-button-hover-bg outfit-extrabold md:mt-2">
           {user.name}
         </h2>
-        <p className="outfit-regular text-center text-xs mt-2 ps-10 pe-10">
+        <p className="outfit-regular text-center md:text-xs text-[8px] md:mt-2 ps-3 pe-3 md:ps-10 md:pe-10">
           in recognition of the invaluable contribution towards our goal of
           planting 10 million trees by 2030. Your dedication and support play a
           vital role in the success of the Green India Mission, bringing us one
           step closer to a greener and more sustainable future.
         </p>
-        <h2 className="uppercase text-button-hover-bg text-xl mt-2 outfit-extrabold">
+        <h2 className="uppercase text-button-hover-bg md:text-xl text-sm md:mt-2 outfit-extrabold">
           {numberOfTrees} TREES PLANTED
         </h2>
-        <p className="text-xs mt-2 outfit-regular">
+        <p className="md:text-xs text-[8px] md:mt-2 outfit-regular">
           Your generosity and commitment will help us grow forests, contributing
         </p>
-        <p className="text-xs outfit-regular text-center">
+        <p className="md:text-xs text-[8px] outfit-regular text-center">
           to the restoration and preservation of our environment.
         </p>
-        <p className="outfit-extrabold text-sm mt-2 text-button-hover-bg uppercase">
+        <p className="outfit-extrabold md:text-sm text-[10px] md:mt-2 text-button-hover-bg uppercase">
           {date}
         </p>
-        <p className="outfit-medium text-sm">{id.toUpperCase()}</p>
-        <div className="flex mt-4 gap-6">
+        <p className="outfit-medium md:text-sm text-[9px]">{id.toUpperCase()}</p>
+        <div className="flex md:mt-4 mt-2 gap-6">
           <div className="flex flex-col items-end">
-            <img src={meeraSign} alt="" className="w-20 h-5" />
-            <h3 className="outfit-semibold text-sm text-right">
+            <img src={meeraSign} alt="" className="md:w-20 md:h-5 w-10 h-2.5" />
+            <h3 className="outfit-semibold md:text-sm text-xs text-right">
               Dr Meera Asmi
             </h3>
-            <p className="text-xs text-right outfit-regular">Chariwoman</p>
-            <p className="text-xs text-right outfit-regular">
+            <p className="md:text-xs text-[8px] text-right outfit-regular">Chariwoman</p>
+            <p className="md:text-xs text-[8px] text-right outfit-regular">
               We Grow Forest Foundation
             </p>
           </div>
@@ -73,63 +73,63 @@ const CertificateContent = () => {
           {/* Vertical Line */}
           <div
             style={{ borderColor: "#9DDE8A", borderWidth: "0.1px" }} // Adjust to your desired lightness
-            className="border-l h-20"
+            className="border-l md:h-20 h-12.5"
           ></div>
 
           <div className="flex flex-col items-start">
-            <img src={merinSign} alt="" className="w-16 h-5" />
-            <h3 className="outfit-semibold text-sm text-left">
+            <img src={merinSign} alt="" className="md:w-16 w-8 md:h-5 h-2.5" />
+            <h3 className="outfit-semibold md:text-sm text-xs text-left">
               Dr Merin Jacob
             </h3>
-            <p className="text-xs text-left outfit-regular">Managing Trustee</p>
-            <p className="text-xs text-left outfit-regular">
+            <p className="md:text-xs text-[8px] text-left outfit-regular">Managing Trustee</p>
+            <p className="md:text-xs text-[8px] text-left outfit-regular">
               We Grow Forest Foundation
             </p>
           </div>
         </div>
         <div className="flex mt-4 justify-between w-full">
           <div className="flex flex-col justify-center items-center">
-            <img src={collegeLogo} alt="" className="w-16 h-16" />
+            <img src={collegeLogo} alt="" className="md:w-16 w-8 md:h-16 h-8" />
             <a
               href="https://www.wegrowforest.college/"
-              className="text-[9px] text-center mt-1"
+              className="md:text-[9px] text-[5px] text-center mt-1"
             >
               www.wegrowforest.college
             </a>
           </div>
           <div className="flex flex-col justify-center items-center">
-            <img src={carbonZero} alt="" className="w-36 h-16" />
+            <img src={carbonZero} alt="" className="md:w-36 w-18 md:h-16 h-8" />
             <a
               href="https://www.carbonzero.day/"
-              className="text-[9px] text-center mt-1"
+              className="md:text-[9px] text-[5px] text-center mt-1"
             >
               www.carbonzero.day
             </a>
           </div>
           <div className="flex flex-col justify-center items-center">
-            <img src={cleanShore} alt="" className="w-16 h-16" />
+            <img src={cleanShore} alt="" className="md:w-16 w-8 md:h-16 h-8" />
             <a
               href="https://seaofchange.in/"
-              className="text-[9px] text-center mt-1"
+              className="md:text-[9px] text-[5px] text-center mt-1"
             >
               www.seaofchange.in
             </a>
           </div>
           <div className="flex flex-col justify-center items-center">
-            <img src={engo} alt="" className="w-12 h-16" />
+            <img src={engo} alt="" className="md:w-12 w-6 md:h-16 h-8" />
             <a
               href="https://engoi.org/"
-              className="text-[9px] text-center mt-1"
+              className="md:text-[9px] text-[5px] text-center mt-1"
             >
               www.engoi.org
             </a>
           </div>
         </div>
         <div className="mt-2 flex flex-col justify-center items-center">
-          <img src={qr} alt="" className="w-16 h-20" />
+          <img src={qr} alt="" className="md:w-16 w-8 md:h-20 h-10" />
           <a
             href="https://www.wegrowforest.org/"
-            className="text-button-hover-bg text-[9px]"
+            className="text-button-hover-bg md:text-[9px] text-[5px]"
           >
             www.wegrowforest.org
           </a>

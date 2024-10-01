@@ -3,7 +3,7 @@ import bg from "../../assets/Background.svg"; // Reuse the background
 const PageLayout = ({ children }) => {
   return (
     <div
-      style={{ backgroundImage: `url(${bg})`,}}
+      style={{ backgroundImage: `url(${bg})`, backgroundPosition: '12% 50%' }}
       className="bg-cover bg-left min-h-screen min-w-fit flex items-center justify-around flex-col lg:flex-row pt-10 pb-10"
     >
       <div>

@@ -8,7 +8,6 @@ export const handlePayment = async (
   address,
   setPaymentStatus
 ) => {
-  console.log(treeCount);
   try {
     const response = await axios.post("https://plant.wegrowforest.org/api/create/order", {
       treeCount,
