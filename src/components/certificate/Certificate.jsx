@@ -142,7 +142,7 @@ const Certificate = () => {
         <div className="flex gap-2 md:ml-7 md:pt-10 pt-2">
           <div className="flex justify-center">
             <button
-              className="bg-button-bg outfit-regular hover:bg-button-hover-bg rounded-3xl md:w-24 w-16 md:text-base text-xs h-8 text-center flex justify-around items-center text-white"
+              className="bg-button-bg outfit-regular hover:bg-button-hover-bg rounded-3xl md:w-36 w-16 md:text-base text-xs h-8 md:h-12 text-center flex justify-around items-center text-white"
               onClick={() => downloadAsPDF(user.name, numberOfTrees)}
             >
               PDF
@@ -151,7 +151,7 @@ const Certificate = () => {
           </div>
           <div className="flex justify-center">
             <button
-              className="bg-button-bg outfit-regular hover:bg-button-hover-bg rounded-3xl md:w-24 w-16 md:text-base text-xs h-8 text-center flex justify-around items-center text-white"
+              className="bg-button-bg outfit-regular hover:bg-button-hover-bg rounded-3xl md:w-36 w-16 md:text-base text-xs h-8 md:h-12 text-center flex justify-around items-center text-white"
               onClick={() => downloadAsJPG(user.name, numberOfTrees)}
             >
               JPEG
@@ -161,7 +161,7 @@ const Certificate = () => {
 
           <div>
             <a href="https://www.wegrowforest.org">
-              <button className="bg-button-bg outfit-regular hover:bg-button-hover-bg rounded-3xl md:w-48 w-36 md:text-base text-xs h-8 text-center flex justify-around items-center text-white">
+              <button className="bg-button-bg outfit-regular hover:bg-button-hover-bg rounded-3xl md:w-48 w-36 md:text-base text-xs h-8 md:h-12 text-center flex justify-around items-center text-white">
                 www.wegrowforest.org
               </button>
             </a>
@@ -170,16 +170,16 @@ const Certificate = () => {
         <div className="md:ml-7 md:pt-10 pt-2 text-white">
           <p className="outfit-extrabold">Instant Share</p>
           <div className="flex gap-2">
-            <p className="bg-button-bg rounded-3xl outfit-regular md:text-base text-xs h-8 text-center overflow-hidden whitespace-nowrap text-ellipsis w-52 flex items-center px-3">
+            <p className="bg-button-bg rounded-3xl outfit-regular md:text-base text-xs h-8 md:h-12 text-center overflow-hidden whitespace-nowrap text-ellipsis w-52 flex items-center px-3">
               {shareUrl}
             </p>
-            <button className="bg-button-bg hover:bg-button-hover-bg rounded-full p-2"
+            <button className="bg-button-bg hover:bg-button-hover-bg rounded-full p-2 md:p-4"
             onClick={copyToClipboard}
             >
               <img src={copyButton} alt="" className="w-5 h-4" />
             </button>
           </div>
-          <p className="outfit text-xs mt-2">Please note that this link will expire in 10 days!</p>
+          <p className="outfit-medium text-xs mt-2">Please note that this link will expire in 10 days!</p>
         </div>
         <div className="md:ml-7">
           <p className="md:pt-10 pt-2 outfit-extrabold text-white">Social Share</p>
@@ -192,7 +192,7 @@ const Certificate = () => {
               <img
                 src={fbHover ? facebookIconDark : facebookIcon}
                 alt="Facebook"
-                className="w-8"
+                className="w-12"
               />
             </FacebookShareButton>
             <TwitterShareButton
@@ -203,7 +203,7 @@ const Certificate = () => {
               <img
                 src={xHover ? twitterIconDark : twitterIcon}
                 alt="X"
-                className="w-8"
+                className="w-12"
               />
             </TwitterShareButton>
             <LinkedinShareButton
@@ -214,7 +214,7 @@ const Certificate = () => {
               <img
                 src={linkedinHover ? linkedinIconDark : linkedinIcon}
                 alt="LinkedIn"
-                className="w-8"
+                className="w-12"
               />
             </LinkedinShareButton>
             <WhatsappShareButton
@@ -225,7 +225,7 @@ const Certificate = () => {
               <img
                 src={wpHover ? whatsappIconDark : whatsappIcon}
                 alt="WhatsApp"
-                className="w-8 whatsapp-icon"
+                className="w-12"
               />
             </WhatsappShareButton>
             <button
@@ -236,7 +236,7 @@ const Certificate = () => {
               <img
                 src={instaHover ? instagramIconDark : instagramIcon}
                 alt="Instagram"
-                className="w-8
+                className="w-12
                 
                 "
               />

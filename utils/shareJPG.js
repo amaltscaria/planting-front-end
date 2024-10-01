@@ -100,8 +100,8 @@ export const shareJPG = async (name, treeCount) => {
         meeraSign.onload = () => {
           merinSign.onload = () => {
             const signatureY = logoY + 1920;
-            ctx.drawImage(merinSign, width / 2 + 105, signatureY, 400, 150);
-            ctx.drawImage(meeraSign, width / 2 - 500, signatureY, 400, 150);
+            ctx.drawImage(merinSign, width / 2 + 105, signatureY, 400, 100);
+            ctx.drawImage(meeraSign, width / 2 - 500, signatureY, 400, 100);
 
             // Draw vertical line between signatures
             ctx.beginPath();

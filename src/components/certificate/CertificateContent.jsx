@@ -89,7 +89,7 @@ const CertificateContent = () => {
         </div>
         <div className="flex mt-4 justify-between w-full">
           <div className="flex flex-col justify-center items-center">
-            <img src={collegeLogo} alt="" className="md:w-16 w-8 md:h-16 h-8" />
+            <img src={collegeLogo} alt="" className="md:w-auto w-8 md:h-16 h-8" />
             <a
               href="https://www.wegrowforest.college/"
               className="md:text-[9px] text-[5px] text-center mt-1"
@@ -98,7 +98,7 @@ const CertificateContent = () => {
             </a>
           </div>
           <div className="flex flex-col justify-center items-center">
-            <img src={carbonZero} alt="" className="md:w-36 w-18 md:h-16 h-8" />
+            <img src={carbonZero} alt="" className="md:w-auto w-18 md:h-16 h-8" />
             <a
               href="https://www.carbonzero.day/"
               className="md:text-[9px] text-[5px] text-center mt-1"
@@ -107,7 +107,7 @@ const CertificateContent = () => {
             </a>
           </div>
           <div className="flex flex-col justify-center items-center">
-            <img src={cleanShore} alt="" className="md:w-16 w-8 md:h-16 h-8" />
+            <img src={cleanShore} alt="" className="md:w-auto w-8 md:h-16 h-8" />
             <a
               href="https://seaofchange.in/"
               className="md:text-[9px] text-[5px] text-center mt-1"
@@ -116,7 +116,7 @@ const CertificateContent = () => {
             </a>
           </div>
           <div className="flex flex-col justify-center items-center">
-            <img src={engo} alt="" className="md:w-12 w-6 md:h-16 h-8" />
+            <img src={engo} alt="" className="md:w-auto w-6 md:h-16 h-8" />
             <a
               href="https://engoi.org/"
               className="md:text-[9px] text-[5px] text-center mt-1"
@@ -126,7 +126,7 @@ const CertificateContent = () => {
           </div>
         </div>
         <div className="mt-2 flex flex-col justify-center items-center">
-          <img src={qr} alt="" className="md:w-16 w-8 md:h-20 h-10" />
+          <img src={qr} alt="" className="md:w-auto w-8 md:h-20 h-10" />
           <a
             href="https://www.wegrowforest.org/"
             className="text-button-hover-bg md:text-[9px] text-[5px]"

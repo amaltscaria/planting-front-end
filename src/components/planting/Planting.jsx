@@ -21,7 +21,8 @@ const Planting = () => {
   }, [user]);
   const handleInputChange = (e) => {
     const { value } = e.target;
-    setCustomTreeCount(value);
+    if(value>100000)setCustomTreeCount(100000)
+    else setCustomTreeCount(value);
   };
 
   const hanldeTreeSelection = (count) => {
@@ -59,7 +60,7 @@ const Planting = () => {
   };
 
   useEffect(() => {
-    if (paymentStatus) {
+    if (!paymentStatus) {
       navigate("/certificate");
 
       const sendFormData = async () => {
@@ -86,7 +87,7 @@ const Planting = () => {
         }
       };
 
-      sendFormData();
+      // sendFormData();
     }
   }, [paymentStatus]); // Removed navigate from dependency array
   return (

@@ -135,7 +135,7 @@ export const downloadAsPDF = (name1, treeCount) => {
   const signatureStartY = 183; // Adjust this value to set the vertical position of the signatures
 
   // Dr. Meera Asmi's Signature and Information
-  pdf.addImage(meeraSign, "PNG", 56, signatureStartY, 40, 10); // Adjust x, y, width, and height for the signature image
+  pdf.addImage(meeraSign, "PNG", 56, signatureStartY, 40, 8); // Adjust x, y, width, and height for the signature image
   pdf.setTextColor("black").setFont("Outfit-ExtraBold", "bold");
   pdf.setFontSize(12);
   pdf.text("Dr Meera Asmi", 67, signatureStartY + 14); // Adjust x, y for the name
@@ -150,7 +150,7 @@ export const downloadAsPDF = (name1, treeCount) => {
   pdf.line(105, signatureStartY, 105, signatureStartY + 23); // Draw vertical line between the signatures
 
   // Dr. Merin Jacob's Signature and Information
-  pdf.addImage(merinSign, "PNG", 114, signatureStartY, 40, 10); // Adjust x, y, width, and height for the signature image
+  pdf.addImage(merinSign, "PNG", 114, signatureStartY, 40, 8); // Adjust x, y, width, and height for the signature image
   pdf.setTextColor("black").setFont("Outfit-ExtraBold", "bold");
   pdf.setFontSize(12);
   pdf.text("Dr Merin Jacob", 114, signatureStartY + 14); // Adjust x, y for the name
@@ -162,61 +162,73 @@ export const downloadAsPDF = (name1, treeCount) => {
   // Logos and Links Section
   const logoStartY = 215; // Adjust this value to set the vertical position for the logos and links
 
-  // College Logo and Link
-  pdf.addImage(collegeLogo, "PNG", 30, logoStartY, 24, 22); // College logo (x, y, width, height)
-  pdf.setFontSize(9).setFont("Outfit-Medium", "normal");
-  pdf
-    .setTextColor("black")
-    .textWithLink("www.wegrowforest.college", 24, logoStartY + 26, {
-      url: "https://www.wegrowforest.college",
-    });
+// College Logo and Link
+const collegeLogoOriginalWidth = 240;  // Example original width of the college logo in pixels
+const collegeLogoOriginalHeight = 220; // Example original height of the college logo in pixels
+const collegeLogoWidth = 24;  // Desired width in mm
+const collegeLogoHeight = (collegeLogoOriginalHeight / collegeLogoOriginalWidth) * collegeLogoWidth; // Calculate proportional height
+pdf.addImage(collegeLogo, "PNG", 30, logoStartY, collegeLogoWidth, collegeLogoHeight); // Add logo with auto height
+pdf.textWithLink("www.wegrowforest.college", 24, logoStartY + 26, {
+  url: "https://www.wegrowforest.college",
+});
 
-  // Carbon Zero Logo and Link
-  pdf.addImage(carbonZero, "PNG", 70, logoStartY, 50, 22); // Carbon Zero logo (x, y, width, height)
-  pdf.setFontSize(9);
-  pdf
-    .setTextColor("black")
-    .textWithLink("www.carbonzero.day", 80, logoStartY + 26, {
-      url: "https://www.carbonzero.day",
-    });
+// Carbon Zero Logo and Link
+const carbonZeroOriginalWidth = 500;  // Example original width of Carbon Zero logo in pixels
+const carbonZeroOriginalHeight = 220; // Example original height of Carbon Zero logo in pixels
+const carbonZeroWidth = 50;  // Desired width in mm
+const carbonZeroHeight = (carbonZeroOriginalHeight / carbonZeroOriginalWidth) * carbonZeroWidth; // Calculate proportional height
+pdf.addImage(carbonZero, "PNG", 70, logoStartY, carbonZeroWidth, carbonZeroHeight);
+pdf.textWithLink("www.carbonzero.day", 80, logoStartY + 26, {
+  url: "https://www.carbonzero.day",
+});
 
-  // Clean Shore Logo and Link
-  pdf.addImage(cleanShore, "PNG", 128, logoStartY, 24, 22); // Clean Shore logo (x, y, width, height)
-  pdf.setFontSize(9);
-  pdf
-    .setTextColor("black")
-    .textWithLink("www.seaofchange.in", 125, logoStartY + 26, {
-      url: "https://seaofchange.in",
-    });
+// Clean Shore Logo and Link
+const cleanShoreOriginalWidth = 240;  // Example original width of the Clean Shore logo in pixels
+const cleanShoreOriginalHeight = 220; // Example original height of the Clean Shore logo in pixels
+const cleanShoreWidth = 24;  // Desired width in mm
+const cleanShoreHeight = (cleanShoreOriginalHeight / cleanShoreOriginalWidth) * cleanShoreWidth; // Calculate proportional height
+pdf.addImage(cleanShore, "PNG", 128, logoStartY, cleanShoreWidth, cleanShoreHeight);
+pdf.textWithLink("www.seaofchange.in", 125, logoStartY + 26, {
+  url: "https://seaofchange.in",
+});
 
-  // ENGO Logo and Link
-  pdf.addImage(engo, "PNG", 165, logoStartY, 17, 22); // ENGO logo (x, y, width, height)
-  pdf.setFontSize(9);
-  pdf
-    .setTextColor("black")
-    .textWithLink("www.engoi.org", 163, logoStartY + 26, {
-      url: "https://www.engoi.org",
-    });
+// ENGO Logo and Link
+const engoOriginalWidth = 170;  // Example original width of ENGO logo in pixels
+const engoOriginalHeight = 220; // Example original height of ENGO logo in pixels
+const engoWidth = 17;  // Desired width in mm
+const engoHeight = (engoOriginalHeight / engoOriginalWidth) * engoWidth; // Calculate proportional height
+pdf.addImage(engo, "PNG", 165, logoStartY, engoWidth, engoHeight);
+pdf.textWithLink("www.engoi.org", 163, logoStartY + 26, {
+  url: "https://www.engoi.org",
+});
 
-  // Centered QR Code and Link Section
-  const qrStartY = 249; // Adjust this value to set the vertical position for the QR code and link
-  const qrWidth = 22;
-  const qrHeight = 22;
 
-  // Calculate x-coordinate to center the QR code
-  const qrX = (pageWidth - qrWidth) / 2;
+// Centered QR Code and Link Section
+const qrStartY = 249; // Adjust this value to set the vertical position for the QR code and link
+const qrDesiredWidth = 22; // Desired width for the QR code
 
-  // QR Code (centered)
-  pdf.addImage(qr, "PNG", qrX, qrStartY, qrWidth, qrHeight);
+// Get the original width and height of the QR image
+const qrOriginalWidth = 22; // Replace with actual original width if known
+const qrOriginalHeight = 22; // Replace with actual original height if known
 
-  // Link below the QR Code (centered)
-  const linkText = "www.wegrowforest.org";
-  const linkWidth = pdf.getTextWidth(linkText);
-  const linkX = (pageWidth - linkWidth) / 2; // Calculate centered position
-  pdf.setTextColor("#40A478").setFontSize(9);
-  pdf.textWithLink(linkText, linkX, qrStartY + qrHeight + 5, {
-    url: "https://www.wegrowforest.org",
-  });
+// Calculate the height maintaining the aspect ratio
+const qrHeightAuto = (qrOriginalHeight / qrOriginalWidth) * qrDesiredWidth;
+
+// Calculate x-coordinate to center the QR code
+const qrX = (pageWidth - qrDesiredWidth) / 2;
+
+// QR Code (centered with auto height)
+pdf.addImage(qr, "PNG", qrX, qrStartY, qrDesiredWidth, qrHeightAuto);
+
+// Link below the QR Code (centered)
+const linkText = "www.wegrowforest.org";
+const linkWidth = pdf.getTextWidth(linkText);
+const linkX = (pageWidth - linkWidth) / 2; // Calculate centered position
+pdf.setTextColor("#40A478");
+pdf.textWithLink(linkText, linkX, qrStartY + qrHeightAuto + 5, {
+  url: "https://www.wegrowforest.org",
+});
+
 
   // Save the PDF
   pdf.save("certificate.pdf");

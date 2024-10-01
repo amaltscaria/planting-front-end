@@ -118,9 +118,9 @@ export const downloadAsJPG = async (name, treeCount) => {
     ctx.fillText(id.toUpperCase(), width / 2, logoY + 1820);
 
     // Draw signatures
-    const signatureY = logoY + 1920;
-    ctx.drawImage(merinSign, width / 2 + 105, signatureY, 400, 150);
-    ctx.drawImage(meeraSign, width / 2 - 500, signatureY, 400, 150);
+    const signatureY = logoY + 1900;
+    ctx.drawImage(merinSign, width / 2 + 105, signatureY, 400, 100);
+    ctx.drawImage(meeraSign, width / 2 - 500, signatureY, 400, 100);
 
     // Draw vertical line between signatures
     ctx.beginPath();
@@ -133,20 +133,20 @@ export const downloadAsJPG = async (name, treeCount) => {
 
     ctx.font = "900 50px Outfit";
     ctx.fillStyle = "#000";
-    ctx.fillText("Dr Merin Jacob", width / 2 + 280, signatureY + 195);
-    ctx.fillText("Dr Meera Asmi", width / 2 - 280, signatureY + 195);
+    ctx.fillText("Dr Merin Jacob", width / 2 + 280, signatureY + 155);
+    ctx.fillText("Dr Meera Asmi", width / 2 - 280, signatureY + 155);
 
-    ctx.font = "600 35px Outfit";
-    ctx.fillText("Managing Trustee", width / 2 + 245, signatureY + 235);
-    ctx.fillText("Chairwoman", width / 2 - 208, signatureY + 235);
+    ctx.font = "600 45px Outfit";
+    ctx.fillText("Managing Trustee", width / 2 + 285, signatureY + 215);
+    ctx.fillText("Chairwoman", width / 2 - 235, signatureY + 215);
 
-    ctx.fillText("We Grow Forest Foundation", width / 2 + 322, signatureY + 270);
-    ctx.fillText("We Grow Forest Foundation", width / 2 - 325, signatureY + 270);
+    ctx.fillText("We Grow Forest Foundation", width / 2 + 380, signatureY + 270);
+    ctx.fillText("We Grow Forest Foundation", width / 2 - 385, signatureY + 270);
 
     // Draw logos
-    const logoStartY = logoY + 2320;
+    const logoStartY = logoY + 2300;
     const logoWidth = 250;
-    const logoHeight = 200;
+    const logoHeight = 250;
     const logoSpacing = (width - 4 * logoWidth) / 5;
 
     ctx.drawImage(collegeLogo, logoSpacing+50, logoStartY, logoWidth+50, logoHeight);
