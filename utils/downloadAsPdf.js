@@ -171,7 +171,7 @@ export const downloadAsPDF = (name, treeCount) => {
   const logoStartY = 208; // Adjust this value to set the vertical position for the logos and links
 
   // College Logo and Link
-  const collegeLogoOriginalWidth = 240; // Example original width of the college logo in pixels
+  const collegeLogoOriginalWidth = 210; // Example original width of the college logo in pixels
   const collegeLogoOriginalHeight = 220; // Example original height of the college logo in pixels
   const collegeLogoWidth = 24; // Desired width in mm
   const collegeLogoHeight =
@@ -189,7 +189,7 @@ export const downloadAsPDF = (name, treeCount) => {
   });
 
   // Carbon Zero Logo and Link
-  const carbonZeroOriginalWidth = 500; // Example original width of Carbon Zero logo in pixels
+  const carbonZeroOriginalWidth = 400; // Example original width of Carbon Zero logo in pixels
   const carbonZeroOriginalHeight = 220; // Example original height of Carbon Zero logo in pixels
   const carbonZeroWidth = 50; // Desired width in mm
   const carbonZeroHeight =
