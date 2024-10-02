@@ -54,7 +54,7 @@ const LoginPage = () => {
           <input
             type="text"
             id="name"
-            className="w-full p-1 sm:p-2 border-2 outfit-medium text-black border-white rounded-4xl bg-white placeholder-gray-300"
+            className="w-full outline-none p-1 sm:p-2 border-2 outfit-medium text-black border-white rounded-4xl bg-white placeholder-gray-300"
             placeholder="Name*"
             value={formData.name}
             name="name"
@@ -71,7 +71,7 @@ const LoginPage = () => {
             type="email"
             id="email"
             name="email"
-            className="w-full p-1 sm:p-2 border-2 outfit-medium text-black border-white rounded-4xl bg-white placeholder-gray-300"
+            className="w-full outline-none p-1 sm:p-2 border-2 outfit-medium text-black border-white rounded-4xl bg-white placeholder-gray-300"
             placeholder="Email*"
             value={formData.email}
             onChange={handleChange}
@@ -87,7 +87,7 @@ const LoginPage = () => {
             type="number"
             name="number"
             id="mobile"
-            className="w-full p-1 sm:p-2 border-2 outfit-medium text-black border-white rounded-4xl bg-white placeholder-gray-300"
+            className="w-full outline-none p-1 sm:p-2 border-2 outfit-medium text-black border-white rounded-4xl bg-white placeholder-gray-300"
             placeholder="Mobile Number*"
             value={formData.number}
             onChange={handleChange}
@@ -103,7 +103,7 @@ const LoginPage = () => {
             type="text"
             name="country"
             id="country"
-            className="w-full p-1 sm:p-2 border-2 outfit-medium text-black border-white rounded-4xl bg-white placeholder-gray-300"
+            className="w-full outline-none p-1 sm:p-2 border-2 outfit-medium text-black border-white rounded-4xl bg-white placeholder-gray-300"
             placeholder="Country*"
             value={formData.country}
             onChange={handleChange}
@@ -119,7 +119,7 @@ const LoginPage = () => {
             type="text"
             id="address"
             name="address"
-            className="w-full p-1 sm:p-2 border-2 outfit-medium text-black border-white rounded-4xl bg-white placeholder-gray-300"
+            className="w-full outline-none p-1 sm:p-2 border-2 outfit-medium text-black border-white rounded-4xl bg-white placeholder-gray-300"
             placeholder="Address"
             value={formData.address}
             onChange={handleChange}
@@ -127,7 +127,7 @@ const LoginPage = () => {
         </div>
         <button
           type="submit"
-          className="w-full border-2 bg-button-bg hover:bg-button-hover-bg border-transparent hover:border-white outfit-medium text-white py-2 rounded-4xl"
+          className="w-full outline-none border-2 bg-button-bg hover:bg-button-hover-bg border-transparent hover:border-white outfit-medium text-white py-2 rounded-4xl"
         >
           Plant Trees Now!
         </button>
