@@ -92,7 +92,7 @@ const CertificateContent = () => {
             <img src={collegeLogo} alt="" className="md:w-auto w-8 md:h-16 h-8" />
             <a
               href="https://www.wegrowforest.college/"
-              className="md:text-[9px] text-[5px] text-center mt-1"
+              className="md:text-[9px] text-[5px] text-center mt-1 outfit-medium"
             >
               www.wegrowforest.college
             </a>
@@ -101,7 +101,7 @@ const CertificateContent = () => {
             <img src={carbonZero} alt="" className="md:w-auto w-18 md:h-16 h-8" />
             <a
               href="https://www.carbonzero.day/"
-              className="md:text-[9px] text-[5px] text-center mt-1"
+              className="md:text-[9px] text-[5px] text-center mt-1 outfit-medium"
             >
               www.carbonzero.day
             </a>
@@ -110,7 +110,7 @@ const CertificateContent = () => {
             <img src={cleanShore} alt="" className="md:w-auto w-8 md:h-16 h-8" />
             <a
               href="https://seaofchange.in/"
-              className="md:text-[9px] text-[5px] text-center mt-1"
+              className="md:text-[9px] text-[5px] text-center mt-1 outfit-medium"
             >
               www.seaofchange.in
             </a>
@@ -119,7 +119,7 @@ const CertificateContent = () => {
             <img src={engo} alt="" className="md:w-auto w-6 md:h-16 h-8" />
             <a
               href="https://engoi.org/"
-              className="md:text-[9px] text-[5px] text-center mt-1"
+              className="md:text-[9px] text-[5px] text-center mt-1 outfit-medium"
             >
               www.engoi.org
             </a>
@@ -129,7 +129,7 @@ const CertificateContent = () => {
           <img src={qr} alt="" className="md:w-auto w-8 md:h-20 h-10" />
           <a
             href="https://www.wegrowforest.org/"
-            className="text-button-hover-bg md:text-[9px] text-[5px]"
+            className="text-button-hover-bg md:text-[9px] text-[5px] outfit-medium"
           >
             www.wegrowforest.org
           </a>

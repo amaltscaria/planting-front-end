@@ -46,7 +46,7 @@ const LoginPage = () => {
         onSubmit={hanldeSubmit}
         className="bg-custom-green p-6 rounded-4xl shadow-lg border-transparent w-[310px] sm:w-[400px] lg:w-[430px]"
       >
-        <h2 className="mb-4 text-white sm:text-base text-sm font-outfit">
+        <h2 className="mb-4 text-white sm:text-base text-sm outfit-medium">
           Welcome to We Grow Forest Foundation's tree planting initiative for
           Green India Mission 2030.
         </h2>
@@ -54,14 +54,14 @@ const LoginPage = () => {
           <input
             type="text"
             id="name"
-            className="w-full p-1 sm:p-2 border-2 font-outfit text-black border-white rounded-4xl bg-white placeholder-gray-300"
+            className="w-full p-1 sm:p-2 border-2 outfit-medium text-black border-white rounded-4xl bg-white placeholder-gray-300"
             placeholder="Name*"
             value={formData.name}
             name="name"
             onChange={handleChange}
           />
           {errors.name && (
-            <p className="text-red-600 font-outfit md:text-base text-xs">
+            <p className="text-red-600 outfit-medium md:text-base text-xs">
               {errors.name}
             </p>
           )}
@@ -71,13 +71,13 @@ const LoginPage = () => {
             type="email"
             id="email"
             name="email"
-            className="w-full p-1 sm:p-2 border-2 font-outfit text-black border-white rounded-4xl bg-white placeholder-gray-300"
+            className="w-full p-1 sm:p-2 border-2 outfit-medium text-black border-white rounded-4xl bg-white placeholder-gray-300"
             placeholder="Email*"
             value={formData.email}
             onChange={handleChange}
           />
           {errors.email && (
-            <p className="text-red-600 font-outfit md:text-base text-xs">
+            <p className="text-red-600 outfit-medium md:text-base text-xs">
               {errors.email}
             </p>
           )}
@@ -87,13 +87,13 @@ const LoginPage = () => {
             type="number"
             name="number"
             id="mobile"
-            className="w-full p-1 sm:p-2 border-2 font-outfit text-black border-white rounded-4xl bg-white placeholder-gray-300"
+            className="w-full p-1 sm:p-2 border-2 outfit-medium text-black border-white rounded-4xl bg-white placeholder-gray-300"
             placeholder="Mobile Number*"
             value={formData.number}
             onChange={handleChange}
           />
           {errors.number && (
-            <p className="text-red-600 font-outfit md:text-base text-xs">
+            <p className="text-red-600 outfit-medium md:text-base text-xs">
               {errors.number}
             </p>
           )}
@@ -103,13 +103,13 @@ const LoginPage = () => {
             type="text"
             name="country"
             id="country"
-            className="w-full p-1 sm:p-2 border-2 font-outfit text-black border-white rounded-4xl bg-white placeholder-gray-300"
+            className="w-full p-1 sm:p-2 border-2 outfit-medium text-black border-white rounded-4xl bg-white placeholder-gray-300"
             placeholder="Country*"
             value={formData.country}
             onChange={handleChange}
           />
           {errors.country && (
-            <p className="text-red-600 font-outfit md:text-base text-xs">
+            <p className="text-red-600 outfit-medium md:text-base text-xs">
               {errors.country}
             </p>
           )}
@@ -119,7 +119,7 @@ const LoginPage = () => {
             type="text"
             id="address"
             name="address"
-            className="w-full p-1 sm:p-2 border-2 font-outfit text-black border-white rounded-4xl bg-white placeholder-gray-300"
+            className="w-full p-1 sm:p-2 border-2 outfit-medium text-black border-white rounded-4xl bg-white placeholder-gray-300"
             placeholder="Address"
             value={formData.address}
             onChange={handleChange}
@@ -127,7 +127,7 @@ const LoginPage = () => {
         </div>
         <button
           type="submit"
-          className="w-full border-2 bg-button-bg hover:bg-button-hover-bg border-transparent hover:border-white font-outfit text-white py-2 rounded-4xl"
+          className="w-full border-2 bg-button-bg hover:bg-button-hover-bg border-transparent hover:border-white outfit-medium text-white py-2 rounded-4xl"
         >
           Plant Trees Now!
         </button>

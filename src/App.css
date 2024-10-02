@@ -99,6 +99,12 @@
   font-style: italic;
 }
 
+.custom-input::placeholder {
+  font-family: 'Outfit', sans-serif; /* Use Outfit font */
+  font-weight: 800; /* Extra bold weight */
+}
+
+
 /* styles.css */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {

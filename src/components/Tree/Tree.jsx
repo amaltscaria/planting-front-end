@@ -20,17 +20,22 @@ const Tree = ({
           {treeCount} Trees
         </p>
       ) : (
+        <div className="flex">
         <input
           type="number"
-          className="bg-white border-2 border-black text-black rounded-3xl mb-3 mt-1 text-center w-16 xs:w-20 placeholder-gray-200 outline-none focus:ring-2 focus:ring-black"
+          className="custom-input bg-white px-1 text-black rounded-3xl mb-3 mt-1 text-center w-8 xs:w-12 text-lg placeholder-black outline-none outfit-extrabold"
           placeholder="101"
           onChange={onInputChange}
           value={customValue}
         />
+         <p className="text-black outfit-extrabold text-center text-xs xs:text-xl mt-0.5">
+           Trees
+        </p>
+        </div>
       )}
 
-      <p className="bg-button-bg rounded-3xl text-center xs:w-20 w-16">
-        {treeCount === 'other' ? customValue : '₹'+treeCount * 110}
+      <p className="bg-button-bg rounded-3xl text-center xs:w-24 w-16">
+        {treeCount === 'other' ? '₹'+customValue*110 : '₹'+treeCount * 110}
       </p>
     </div>
   );

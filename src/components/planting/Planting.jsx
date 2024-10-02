@@ -21,8 +21,13 @@ const Planting = () => {
   }, [user]);
   const handleInputChange = (e) => {
     const { value } = e.target;
-    if(value>100000)setCustomTreeCount(100000)
-    else setCustomTreeCount(value);
+    if(value>100000){
+      setError({ error: "Please Select a value between 101 and 100000" });
+    }
+    else {
+      setError({});
+      setCustomTreeCount(value);
+    }
   };
 
   const hanldeTreeSelection = (count) => {
@@ -93,7 +98,7 @@ const Planting = () => {
   return (
     <PageLayout>
       <div className="text-white">
-        <p className="text-center mb-6">How many trees do you want to plant?</p>
+        <p className="text-center mb-6 outfit-medium">How many trees do you want to plant?</p>
         <div className="mb-6">
           <div className="grid grid-cols-2 xs:ml-0 ml-8 gap-5 round mb-6 md:grid-cols-3">
             <Tree

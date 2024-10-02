@@ -19,6 +19,7 @@ const loadImage = (src) => {
   });
 };
 
+
 export const downloadAsJPG = async (name, treeCount) => {
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("2d");
@@ -57,28 +58,28 @@ export const downloadAsJPG = async (name, treeCount) => {
     ctx.drawImage(background, 0, 0, width, height);
 
     // Draw logo
-    const logoY = 270;
-    ctx.drawImage(logo, (width - 400) / 2, logoY, 400, 520);
+    const logoY = 300; // Reduced by 20
+    ctx.drawImage(logo, (width - 400) / 2, logoY, 400, 450);
 
     // Title Text
     ctx.font = "900 60px Outfit";
     ctx.fillStyle = "#40A578";
     ctx.textAlign = "center";
-    ctx.fillText("CERTIFICATE OF", width / 2, logoY + 620);
+    ctx.fillText("CERTIFICATE OF", width / 2, logoY + 560); // Reduced by 20
 
     // Main Heading
     ctx.font = "900 120px Outfit";
-    ctx.fillText("APPRECIATION", width / 2, logoY + 730);
+    ctx.fillText("APPRECIATION", width / 2, logoY + 670); // Reduced by 20
 
     // Subheading Text
     ctx.font = "600 50px Outfit";
     ctx.fillStyle = "#000";
-    ctx.fillText("This certificate is awarded to", width / 2, logoY + 840);
+    ctx.fillText("This certificate is awarded to", width / 2, logoY + 780); // Reduced by 20
 
     // Name of Participant
     ctx.font = "900 100px Outfit";
     ctx.fillStyle = "#40A578";
-    ctx.fillText(name.toUpperCase(), width / 2, logoY + 1000);
+    ctx.fillText(name.toUpperCase(), width / 2, logoY + 940); // Reduced by 20
 
     // Certificate Body
     const bodyText = [
@@ -90,13 +91,13 @@ export const downloadAsJPG = async (name, treeCount) => {
     ctx.font = "600 50px Outfit";
     ctx.fillStyle = "#000";
     bodyText.forEach((line, index) => {
-      ctx.fillText(line, width / 2, logoY + 1100 + index * 60);
+      ctx.fillText(line, width / 2, logoY + 1040 + index * 60); // Reduced by 20
     });
 
     // Number of Trees planted Section
     ctx.font = "900 100px Outfit";
     ctx.fillStyle = "#40A578";
-    ctx.fillText(`${treeCount} TREES PLANTED`, width / 2, logoY + 1450);
+    ctx.fillText(`${treeCount} TREES PLANTED`, width / 2, logoY + 1390); // Reduced by 20
 
     // Thank you section
     const thankYouText = [
@@ -106,19 +107,19 @@ export const downloadAsJPG = async (name, treeCount) => {
     ctx.font = "600 50px Outfit";
     ctx.fillStyle = "#000";
     thankYouText.forEach((line, index) => {
-      ctx.fillText(line, width / 2, logoY + 1550 + index * 60);
+      ctx.fillText(line, width / 2, logoY + 1490 + index * 60); // Reduced by 20
     });
 
     // Date and certificate number
     ctx.font = "900 60px Outfit";
     ctx.fillStyle = "#40A578";
-    ctx.fillText(date.toUpperCase(), width / 2, logoY + 1750);
+    ctx.fillText(date.toUpperCase(), width / 2, logoY + 1690); // Reduced by 20
     ctx.font = "600 60px Outfit";
     ctx.fillStyle = "#000";
-    ctx.fillText(id.toUpperCase(), width / 2, logoY + 1820);
+    ctx.fillText(id.toUpperCase(), width / 2, logoY + 1760); // Reduced by 20
 
     // Draw signatures
-    const signatureY = logoY + 1900;
+    const signatureY = logoY + 1840; // Reduced by 20
     ctx.drawImage(merinSign, width / 2 + 105, signatureY, 400, 100);
     ctx.drawImage(meeraSign, width / 2 - 500, signatureY, 400, 100);
 
@@ -129,7 +130,6 @@ export const downloadAsJPG = async (name, treeCount) => {
     ctx.strokeStyle = "#9DDE8A";
     ctx.lineWidth = 2;
     ctx.stroke();
-
 
     ctx.font = "900 50px Outfit";
     ctx.fillStyle = "#000";
@@ -144,28 +144,28 @@ export const downloadAsJPG = async (name, treeCount) => {
     ctx.fillText("We Grow Forest Foundation", width / 2 - 385, signatureY + 270);
 
     // Draw logos
-    const logoStartY = logoY + 2300;
+    const logoStartY = logoY + 2240; // Reduced by 20
     const logoWidth = 250;
     const logoHeight = 250;
     const logoSpacing = (width - 4 * logoWidth) / 5;
 
-    ctx.drawImage(collegeLogo, logoSpacing+50, logoStartY, logoWidth+50, logoHeight);
-    ctx.drawImage(carbonZeroLogo, 2 * logoSpacing + logoWidth -30, logoStartY, logoWidth+350, logoHeight);
+    ctx.drawImage(collegeLogo, logoSpacing + 50, logoStartY, logoWidth + 50, logoHeight);
+    ctx.drawImage(carbonZeroLogo, 2 * logoSpacing + logoWidth - 30, logoStartY, logoWidth + 350, logoHeight);
     ctx.drawImage(cleanShoreLogo, 3 * logoSpacing + 2 * logoWidth + 100, logoStartY, logoWidth, logoHeight);
-    ctx.drawImage(engoLogo, 4 * logoSpacing + 3 * logoWidth -30, logoStartY, logoWidth, logoHeight);
+    ctx.drawImage(engoLogo, 4 * logoSpacing + 3 * logoWidth - 30, logoStartY, logoWidth, logoHeight);
 
-    ctx.font = "25px Outfit";
+    ctx.font = "600 30px Outfit";
     ctx.fillStyle = "#000";
     ctx.fillText("www.wegrowforest.college", logoSpacing + logoWidth / 2 + 75, logoStartY + logoHeight + 40);
     ctx.fillText("www.carbonzero.day", 2 * logoSpacing + 1.5 * logoWidth + 140, logoStartY + logoHeight + 40);
     ctx.fillText("www.seaofchange.in", 3 * logoSpacing + 2.5 * logoWidth + 100, logoStartY + logoHeight + 40);
-    ctx.fillText("www.engoi.org", 4 * logoSpacing + 3.5 * logoWidth -30, logoStartY + logoHeight + 40);
+    ctx.fillText("www.engoi.org", 4 * logoSpacing + 3.5 * logoWidth - 30, logoStartY + logoHeight + 40);
 
     // Draw QR code and website URL
     const qrSize = 250;
-    const qrY = logoStartY + logoHeight + 150;
+    const qrY = logoStartY + logoHeight + 130; // Reduced by 20
     ctx.drawImage(qr, (width - qrSize) / 2, qrY, qrSize, qrSize);
-    ctx.font = "30px Outfit";
+    ctx.font = "600 30px Outfit";
     ctx.fillText("www.wegrowforest.org", width / 2, qrY + qrSize + 40);
 
     // Generate and download the image
