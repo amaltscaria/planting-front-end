@@ -127,7 +127,7 @@ const LoginPage = () => {
         </div>
         <button
           type="submit"
-          className="w-full outline-none border-2 bg-button-bg hover:bg-button-hover-bg border-transparent hover:border-white outfit-medium text-white py-2 rounded-4xl"
+          className="w-full outline-none border-2 bg-button-bg hover:bg-white hover:text-button-hover-bg border-transparent outfit-medium text-white py-2 rounded-4xl"
         >
           Plant Trees Now!
         </button>
