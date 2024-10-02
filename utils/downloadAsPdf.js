@@ -143,7 +143,7 @@ export const downloadAsPDF = (name, treeCount) => {
   const signatureStartY = 176; // Adjust this value to set the vertical position of the signatures
 
   // Dr. Meera Asmi's Signature and Information
-  pdf.addImage(meeraSign, "PNG", 56, signatureStartY, 40, 8); // Adjust x, y, width, and height for the signature image
+  pdf.addImage(meeraSign, "PNG", 56, signatureStartY, 27, 8); // Adjust x, y, width, and height for the signature image
   pdf.setTextColor("black").setFont("Outfit-ExtraBold", "bold");
   pdf.setFontSize(12);
   pdf.text("Dr Meera Asmi", 67, signatureStartY + 14); // Adjust x, y for the name
@@ -158,7 +158,7 @@ export const downloadAsPDF = (name, treeCount) => {
   pdf.line(105, signatureStartY, 105, signatureStartY + 23); // Draw vertical line between the signatures
 
   // Dr. Merin Jacob's Signature and Information
-  pdf.addImage(merinSign, "PNG", 114, signatureStartY, 40, 8); // Adjust x, y, width, and height for the signature image
+  pdf.addImage(merinSign, "PNG", 114, signatureStartY, 27, 8); // Adjust x, y, width, and height for the signature image
   pdf.setTextColor("black").setFont("Outfit-ExtraBold", "bold");
   pdf.setFontSize(12);
   pdf.text("Dr Merin Jacob", 114, signatureStartY + 14); // Adjust x, y for the name
