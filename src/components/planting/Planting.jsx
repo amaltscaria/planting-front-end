@@ -137,13 +137,13 @@ const Planting = () => {
           </div>
         </div>
         {errors.error && (
-          <p className="text-red-500 font-outfit md:text-base text-xs text-center mb-6">
+          <p className="text-red-500 outfit-medium md:text-base text-xs text-center mb-6">
             {errors.error}
           </p>
         )}
         <button
           onClick={handlePlantTrees}
-          className="bg-button-bg w-full rounded-3xl h-9 hover:bg-button-hover-bg"
+          className="bg-button-bg w-full rounded-3xl h-9 hover:bg-button-hover-bg outfit-medium"
         >
           Plant Trees Now!
         </button>
