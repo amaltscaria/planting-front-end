@@ -171,7 +171,7 @@ export const downloadAsPDF = (name, treeCount) => {
   const logoStartY = 208; // Adjust this value to set the vertical position for the logos and links
 
   // College Logo and Link
-  const collegeLogoOriginalWidth = 210; // Example original width of the college logo in pixels
+  const collegeLogoOriginalWidth = 208; // Example original width of the college logo in pixels
   const collegeLogoOriginalHeight = 220; // Example original height of the college logo in pixels
   const collegeLogoWidth = 24; // Desired width in mm
   const collegeLogoHeight =
@@ -189,7 +189,7 @@ export const downloadAsPDF = (name, treeCount) => {
   });
 
   // Carbon Zero Logo and Link
-  const carbonZeroOriginalWidth = 400; // Example original width of Carbon Zero logo in pixels
+  const carbonZeroOriginalWidth = 588; // Example original width of Carbon Zero logo in pixels
   const carbonZeroOriginalHeight = 220; // Example original height of Carbon Zero logo in pixels
   const carbonZeroWidth = 50; // Desired width in mm
   const carbonZeroHeight =
@@ -207,7 +207,7 @@ export const downloadAsPDF = (name, treeCount) => {
   });
 
   // Clean Shore Logo and Link
-  const cleanShoreOriginalWidth = 240; // Example original width of the Clean Shore logo in pixels
+  const cleanShoreOriginalWidth = 211; // Example original width of the Clean Shore logo in pixels
   const cleanShoreOriginalHeight = 220; // Example original height of the Clean Shore logo in pixels
   const cleanShoreWidth = 24; // Desired width in mm
   const cleanShoreHeight =
@@ -225,7 +225,7 @@ export const downloadAsPDF = (name, treeCount) => {
   });
 
   // ENGO Logo and Link
-  const engoOriginalWidth = 170; // Example original width of ENGO logo in pixels
+  const engoOriginalWidth = 164; // Example original width of ENGO logo in pixels
   const engoOriginalHeight = 220; // Example original height of ENGO logo in pixels
   const engoWidth = 17; // Desired width in mm
   const engoHeight = (engoOriginalHeight / engoOriginalWidth) * engoWidth; // Calculate proportional height
