@@ -33,7 +33,7 @@ export const downloadAsPDF = (name, treeCount) => {
   pdf.setTextColor("#40A578").setFont("Outfit-Medium");
 
   // Assuming logoOriginalWidth and logoOriginalHeight are the original dimensions of your logo
-  const logoOriginalWidth = 240; // Example original width in pixels
+  const logoOriginalWidth = 210; // Example original width in pixels
   const logoOriginalHeight = 220; // Example original height in pixels
 
   // Desired width for the logo in mm
