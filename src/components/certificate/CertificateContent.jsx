@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { UserContext } from "../../../store/UserContext";
-import certificateBackgroundImage from "../../assets/Planting - Certificate BG.jpg";
+import certificateBackgroundImage from "../../assets/Planting - Certificate BG.svg";
 import logo from "../../assets/We Grow Forest - Logo.png";
 import meeraSign from "../../assets/Meera Sign.png";
 import merinSign from "../../assets/Merin Sign.png";

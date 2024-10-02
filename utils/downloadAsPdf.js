@@ -14,10 +14,8 @@ import carbonZero from "../src/assets/Carbon Zero Day - Logo.png";
 
 registerFonts();
 registerFonts2();
-// Generate and Download the PDF certificate
-const name = "Amal T Scaria";
 
-export const downloadAsPDF = (name1, treeCount) => {
+export const downloadAsPDF = (name, treeCount) => {
   const pdf = new jsPDF({
     orientation: "portrait",
     unit: "mm",
