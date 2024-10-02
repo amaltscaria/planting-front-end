@@ -9,7 +9,7 @@ const Tree = ({
 }) => {
   return (
     <div
-      className={`p-4 flex flex-col items-center justify-center w-20 xs:w-32 rounded-3xl hover:bg-div-hover-bg cursor-pointer ${
+      className={`p-4 flex flex-col items-center justify-center w-20 xs:w-32 border-white border-2 rounded-3xl hover:bg-div-hover-bg cursor-pointer ${
         isSelected ? "bg-div-hover-bg border-2 border-green-500" : "bg-white"
       }`}
       onClick={clickEvent}
