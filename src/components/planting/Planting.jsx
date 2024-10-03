@@ -65,7 +65,7 @@ const Planting = () => {
   };
 
   useEffect(() => {
-    if (!paymentStatus) {
+    if (paymentStatus) {
       navigate("/certificate");
 
       const sendFormData = async () => {
@@ -92,7 +92,7 @@ const Planting = () => {
         }
       };
 
-      // sendFormData();
+      sendFormData();
     }
   }, [paymentStatus]); // Removed navigate from dependency array
   return (

@@ -46,7 +46,7 @@ const LoginPage = () => {
         onSubmit={hanldeSubmit}
         className="bg-custom-green p-6 rounded-4xl shadow-lg border-transparent w-[310px] sm:w-[400px] lg:w-[430px]"
       >
-        <h2 className="mb-4 text-white sm:text-base text-sm outfit-medium">
+        <h2 className="mb-4 text-white sm:text-base text-sm outfit-medium" style={{lineHeight:'1.2rem'}}>
           Welcome to We Grow Forest Foundation's tree planting initiative for
           Green India Mission 2030.
         </h2>

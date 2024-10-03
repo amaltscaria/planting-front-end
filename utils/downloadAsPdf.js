@@ -44,7 +44,7 @@ export const downloadAsPDF = (name, treeCount) => {
   const logoX = (pageWidth - logoWidth) / 2;
 
   // Add the logo with auto height
-  pdf.addImage(logo, "PNG", logoX, 28, logoWidth, logoHeight);
+  pdf.addImage(logo, "PNG", logoX, 23, logoWidth, logoHeight);
 
   // Title Text
   pdf.setFontSize(12);
@@ -169,7 +169,7 @@ export const downloadAsPDF = (name, treeCount) => {
 
   // Logos and Links Section
   const logoStartY = 208; // Adjust this value to set the vertical position for the logos and links
-
+  pdf.setFontSize(8);
   // College Logo and Link
   const collegeLogoOriginalWidth = 208; // Example original width of the college logo in pixels
   const collegeLogoOriginalHeight = 220; // Example original height of the college logo in pixels
@@ -184,7 +184,7 @@ export const downloadAsPDF = (name, treeCount) => {
     collegeLogoWidth,
     collegeLogoHeight
   ); // Add logo with auto height
-  pdf.textWithLink("www.wegrowforest.college", 24, logoStartY + 26, {
+  pdf.textWithLink("www.wegrowforest.college", 25, logoStartY + 29, {
     url: "https://www.wegrowforest.college",
   });
 
@@ -198,11 +198,11 @@ export const downloadAsPDF = (name, treeCount) => {
     carbonZero,
     "PNG",
     70,
-    logoStartY,
+    logoStartY+3,
     carbonZeroWidth,
     carbonZeroHeight
   );
-  pdf.textWithLink("www.carbonzero.day", 80, logoStartY + 26, {
+  pdf.textWithLink("www.carbonzero.day", 80, logoStartY + 29, {
     url: "https://www.carbonzero.day",
   });
 
@@ -220,7 +220,7 @@ export const downloadAsPDF = (name, treeCount) => {
     cleanShoreWidth,
     cleanShoreHeight
   );
-  pdf.textWithLink("www.seaofchange.in", 125, logoStartY + 26, {
+  pdf.textWithLink("www.seaofchange.in", 127, logoStartY + 29, {
     url: "https://seaofchange.in",
   });
 
@@ -230,12 +230,12 @@ export const downloadAsPDF = (name, treeCount) => {
   const engoWidth = 17; // Desired width in mm
   const engoHeight = (engoOriginalHeight / engoOriginalWidth) * engoWidth; // Calculate proportional height
   pdf.addImage(engo, "PNG", 165, logoStartY, engoWidth, engoHeight);
-  pdf.textWithLink("www.engoi.org", 163, logoStartY + 26, {
+  pdf.textWithLink("www.engoi.org", 164, logoStartY + 29, {
     url: "https://www.engoi.org",
   });
 
   // Centered QR Code and Link Section
-  const qrStartY = 242; // Adjust this value to set the vertical position for the QR code and link
+  const qrStartY = 246; // Adjust this value to set the vertical position for the QR code and link
   const qrDesiredWidth = 22; // Desired width for the QR code
 
   // Get the original width and height of the QR image
