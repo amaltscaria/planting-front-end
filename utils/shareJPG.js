@@ -57,28 +57,28 @@ export const shareJPG = async (name, treeCount) => {
     ctx.drawImage(background, 0, 0, width, height);
 
     // Draw logo
-    const logoY = 300; // Reduced by 20
+    const logoY = 300;
     ctx.drawImage(logo, (width - 400) / 2, logoY, 431, 450);
 
     // Title Text
     ctx.font = "900 60px Outfit";
     ctx.fillStyle = "#40A578";
     ctx.textAlign = "center";
-    ctx.fillText("CERTIFICATE OF", width / 2, logoY + 560); // Reduced by 20
+    ctx.fillText("CERTIFICATE OF", width / 2, logoY + 560);
 
     // Main Heading
     ctx.font = "900 120px Outfit";
-    ctx.fillText("APPRECIATION", width / 2, logoY + 670); // Reduced by 20
+    ctx.fillText("APPRECIATION", width / 2, logoY + 670);
 
     // Subheading Text
     ctx.font = "600 50px Outfit";
     ctx.fillStyle = "#000";
-    ctx.fillText("This certificate is awarded to", width / 2, logoY + 780); // Reduced by 20
+    ctx.fillText("This certificate is awarded to", width / 2, logoY + 780);
 
     // Name of Participant
     ctx.font = "900 100px Outfit";
     ctx.fillStyle = "#40A578";
-    ctx.fillText(name.toUpperCase(), width / 2, logoY + 940); // Reduced by 20
+    ctx.fillText(name.toUpperCase(), width / 2, logoY + 940);
 
     // Certificate Body
     const bodyText = [
@@ -90,13 +90,13 @@ export const shareJPG = async (name, treeCount) => {
     ctx.font = "600 50px Outfit";
     ctx.fillStyle = "#000";
     bodyText.forEach((line, index) => {
-      ctx.fillText(line, width / 2, logoY + 1040 + index * 60); // Reduced by 20
+      ctx.fillText(line, width / 2, logoY + 1040 + index * 60);
     });
 
     // Number of Trees planted Section
     ctx.font = "900 100px Outfit";
     ctx.fillStyle = "#40A578";
-    ctx.fillText(`${treeCount} TREES PLANTED`, width / 2, logoY + 1390); // Reduced by 20
+    ctx.fillText(`${treeCount} TREES PLANTED`, width / 2, logoY + 1390);
 
     // Thank you section
     const thankYouText = [
@@ -106,19 +106,19 @@ export const shareJPG = async (name, treeCount) => {
     ctx.font = "600 50px Outfit";
     ctx.fillStyle = "#000";
     thankYouText.forEach((line, index) => {
-      ctx.fillText(line, width / 2, logoY + 1490 + index * 60); // Reduced by 20
+      ctx.fillText(line, width / 2, logoY + 1490 + index * 60);
     });
 
     // Date and certificate number
     ctx.font = "900 60px Outfit";
     ctx.fillStyle = "#40A578";
-    ctx.fillText(date.toUpperCase(), width / 2, logoY + 1690); // Reduced by 20
+    ctx.fillText(date.toUpperCase(), width / 2, logoY + 1690);
     ctx.font = "600 60px Outfit";
     ctx.fillStyle = "#000";
-    ctx.fillText(id.toUpperCase(), width / 2, logoY + 1760); // Reduced by 20
+    ctx.fillText(id.toUpperCase(), width / 2, logoY + 1760);
 
     // Draw signatures
-    const signatureY = logoY + 1840; // Reduced by 20
+    const signatureY = logoY + 1840;
     ctx.drawImage(merinSign, width / 2 + 105, signatureY, 339, 100);
     ctx.drawImage(meeraSign, width / 2 - 615, signatureY, 517, 100);
 
@@ -139,20 +139,12 @@ export const shareJPG = async (name, treeCount) => {
     ctx.fillText("Managing Trustee", width / 2 + 285, signatureY + 215);
     ctx.fillText("Chairwoman", width / 2 - 235, signatureY + 215);
 
-    ctx.fillText(
-      "We Grow Forest Foundation",
-      width / 2 + 380,
-      signatureY + 270
-    );
-    ctx.fillText(
-      "We Grow Forest Foundation",
-      width / 2 - 385,
-      signatureY + 270
-    );
+    ctx.fillText("We Grow Forest Foundation", width / 2 + 380, signatureY + 270);
+    ctx.fillText("We Grow Forest Foundation", width / 2 - 385, signatureY + 270);
 
     // Draw logos
-    const logoStartY = logoY + 2240; // Adjusted Y position
-    const logoHeight = 250; // Same height for all logos
+    const logoStartY = logoY + 2240;
+    const logoHeight = 250;
 
     // Define the width for each logo
     const carbonZeroLogoWidth = 668;
@@ -161,102 +153,37 @@ export const shareJPG = async (name, treeCount) => {
     const engoLogoWidth = 186;
 
     // Define custom spacing between each logo
-    const collegeLogoSpacing = 380; // Spacing for the college logo
-    const carbonZeroLogoSpacing = 180; // Spacing between the college and Carbon Zero logos
-    const cleanShoreLogoSpacing = 120; // Spacing between Carbon Zero and Sea of Change logos
-    const engoLogoSpacing = 160; // Spacing between Sea of Change and Engoi logos
+    const collegeLogoSpacing = 380;
+    const carbonZeroLogoSpacing = 180;
+    const cleanShoreLogoSpacing = 120;
+    const engoLogoSpacing = 160;
 
     // Draw logos with custom spacing
-    ctx.drawImage(
-      collegeLogo,
-      collegeLogoSpacing,
-      logoStartY,
-      collegeLogoWidth,
-      logoHeight
-    );
-    ctx.drawImage(
-      carbonZeroLogo,
-      collegeLogoSpacing + collegeLogoWidth + carbonZeroLogoSpacing,
-      logoStartY,
-      carbonZeroLogoWidth,
-      logoHeight
-    );
-    ctx.drawImage(
-      cleanShoreLogo,
-      collegeLogoSpacing +
-        collegeLogoWidth +
-        carbonZeroLogoWidth +
-        carbonZeroLogoSpacing +
-        cleanShoreLogoSpacing,
-      logoStartY,
-      cleanShoreLogoWidth,
-      logoHeight
-    );
-    ctx.drawImage(
-      engoLogo,
-      collegeLogoSpacing +
-        collegeLogoWidth +
-        carbonZeroLogoWidth +
-        cleanShoreLogoWidth +
-        carbonZeroLogoSpacing +
-        cleanShoreLogoSpacing +
-        engoLogoSpacing,
-      logoStartY,
-      engoLogoWidth,
-      logoHeight
-    );
+    ctx.drawImage(collegeLogo, collegeLogoSpacing, logoStartY, collegeLogoWidth, logoHeight);
+    ctx.drawImage(carbonZeroLogo, collegeLogoSpacing + collegeLogoWidth + carbonZeroLogoSpacing, logoStartY, carbonZeroLogoWidth, logoHeight);
+    ctx.drawImage(cleanShoreLogo, collegeLogoSpacing + collegeLogoWidth + carbonZeroLogoWidth + carbonZeroLogoSpacing + cleanShoreLogoSpacing, logoStartY, cleanShoreLogoWidth, logoHeight);
+    ctx.drawImage(engoLogo, collegeLogoSpacing + collegeLogoWidth + carbonZeroLogoWidth + cleanShoreLogoWidth + carbonZeroLogoSpacing + cleanShoreLogoSpacing + engoLogoSpacing, logoStartY, engoLogoWidth, logoHeight);
 
     // Draw website URLs below each logo
     ctx.font = "600 35px Outfit";
     ctx.fillStyle = "#000";
-    ctx.fillText(
-      "www.wegrowforest.college",
-      collegeLogoSpacing + collegeLogoWidth / 2,
-      logoStartY + logoHeight + 40
-    );
-    ctx.fillText(
-      "www.carbonzero.day",
-      collegeLogoSpacing +
-        collegeLogoWidth +
-        carbonZeroLogoWidth / 2 +
-        carbonZeroLogoSpacing,
-      logoStartY + logoHeight + 40
-    );
-    ctx.fillText(
-      "www.seaofchange.in",
-      collegeLogoSpacing +
-        collegeLogoWidth +
-        carbonZeroLogoWidth +
-        cleanShoreLogoWidth / 2 +
-        carbonZeroLogoSpacing +
-        cleanShoreLogoSpacing,
-      logoStartY + logoHeight + 40
-    );
-    ctx.fillText(
-      "www.engoi.org",
-      collegeLogoSpacing +
-        collegeLogoWidth +
-        carbonZeroLogoWidth +
-        cleanShoreLogoWidth +
-        engoLogoWidth / 2 +
-        carbonZeroLogoSpacing +
-        cleanShoreLogoSpacing +
-        engoLogoSpacing,
-      logoStartY + logoHeight + 40
-    );
+    ctx.fillText("www.wegrowforest.college", collegeLogoSpacing + collegeLogoWidth / 2, logoStartY + logoHeight + 40);
+    ctx.fillText("www.carbonzero.day", collegeLogoSpacing + collegeLogoWidth + carbonZeroLogoWidth / 2 + carbonZeroLogoSpacing, logoStartY + logoHeight + 40);
+    ctx.fillText("www.seaofchange.in", collegeLogoSpacing + collegeLogoWidth + carbonZeroLogoWidth + cleanShoreLogoWidth / 2 + carbonZeroLogoSpacing + cleanShoreLogoSpacing, logoStartY + logoHeight + 40);
+    ctx.fillText("www.engoi.org", collegeLogoSpacing + collegeLogoWidth + carbonZeroLogoWidth + cleanShoreLogoWidth + engoLogoWidth / 2 + carbonZeroLogoSpacing + cleanShoreLogoSpacing + engoLogoSpacing, logoStartY + logoHeight + 40);
 
     // Draw QR code and website URL
     const qrSize = 250;
-    const qrY = logoStartY + logoHeight + 130; // Reduced by 20
+    const qrY = logoStartY + logoHeight + 130;
     ctx.drawImage(qr, (width - qrSize) / 2, qrY, qrSize, qrSize);
     ctx.font = "600 30px Outfit";
     ctx.fillStyle = "#40A578";
     ctx.fillText("www.wegrowforest.org", width / 2, qrY + qrSize + 40);
 
-    const imgData =  canvas.toDataURL("image/jpeg", 0.95);
-    resolve(imgData)
+    // Return image data
+    return canvas.toDataURL("image/jpeg", 0.95);
   } catch (error) {
-    console.error("Error generating JPG:", error);
+    console.error("Error generating certificate:", error);
     throw error;
   }
 };
