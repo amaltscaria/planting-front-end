@@ -40,7 +40,7 @@ const Certificate = () => {
   const { user } = useContext(UserContext);
   const { numberOfTrees } = useContext(TreesContext);
   const [shareUrl, setShareUrl] = useState(
-    "http://localhost:3001/uploads/3453434342.jpg"
+    "generating link ..."
   );
   const navigate = useNavigate();
   const [fbHover, setFbHover] = useState(false);
