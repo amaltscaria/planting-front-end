@@ -250,6 +250,7 @@ export const downloadAsJPG = async (name, treeCount) => {
     const qrY = logoStartY + logoHeight + 130; // Reduced by 20
     ctx.drawImage(qr, (width - qrSize) / 2, qrY, qrSize, qrSize);
     ctx.font = "600 30px Outfit";
+    ctx.fillStyle = "#40A578";
     ctx.fillText("www.wegrowforest.org", width / 2, qrY + qrSize + 40);
 
     // Generate and download the image
