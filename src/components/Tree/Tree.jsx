@@ -36,7 +36,7 @@ const Tree = ({
         </div>
       )}
 
-      <p className="bg-button-bg rounded-3xl text-center xs:w-24 w-16">
+      <p className="bg-button-bg outfit-semibold rounded-3xl text-center xs:w-24 w-16">
         {treeCount === "other"
           ? "₹" + customValue * 110
           : "₹" + treeCount * 110}
