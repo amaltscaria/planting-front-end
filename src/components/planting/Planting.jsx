@@ -65,7 +65,7 @@ const Planting = () => {
   };
 
   useEffect(() => {
-    if (paymentStatus) {
+    if (!paymentStatus) {
       navigate("/certificate");
 
       const sendFormData = async () => {
