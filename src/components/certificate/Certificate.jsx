@@ -160,7 +160,7 @@ const Certificate = () => {
           </div>
 
           <div>
-            <a href="https://www.wegrowforest.org">
+            <a href="https://www.wegrowforest.org" target="_blank" rel="noopener noreferrer">
               <button className="bg-button-bg outfit-regular hover:bg-button-hover-bg rounded-3xl md:w-48 w-36 md:text-base text-xs h-8 md:h-12 text-center flex justify-around items-center text-white">
                 www.wegrowforest.org
               </button>
