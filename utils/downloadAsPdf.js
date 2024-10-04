@@ -112,7 +112,7 @@ export const downloadAsPDF = (name, treeCount) => {
   pdf.setTextColor("black").setFont("Outfit-Medium", "normal");
   pdf.setFontSize(12);
   const thankyouText =
-    "Your generosity and commitment will help us grow foersts, contributing";
+    "Your generosity and commitment will help us grow forests, contributing";
   const thankyouTextWidth = pdf.getTextWidth(thankyouText);
   const thankyouX = (pageWidth - thankyouTextWidth) / 2;
   pdf.text(thankyouText, thankyouX, 148);
