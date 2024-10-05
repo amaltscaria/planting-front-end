@@ -260,6 +260,6 @@ export const downloadAsJPG = async (name, treeCount) => {
     link.download = "certificate.jpg";
     link.click();
   } catch (error) {
-    console.error("Error generating certificate:", error);
+    throw error;
   }
 };

@@ -55,7 +55,7 @@ export const handlePayment = async (
     });
     return rzp1;
   } catch (error) {
-    console.error("Error creating order:", error);
+    throw error;
   }
 };
 
@@ -72,7 +72,7 @@ const verifyPayment = async (
       });
       return response.data; // Make sure this returns { success: true/false }
     } catch (error) {
-      console.error("Error verifying payment:", error);
+      throw error;
       return { success: false }; // Return false in case of an error
     }
   };

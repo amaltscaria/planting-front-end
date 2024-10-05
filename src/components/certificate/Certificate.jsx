@@ -80,7 +80,7 @@ const Certificate = () => {
           progress: undefined,
           theme: "light",
         });
-        console.error("Failed to copy text: ", err);
+       throw err;
       }
     );
   };
@@ -124,7 +124,7 @@ const Certificate = () => {
         const data = await response.json();
         setShareUrl(data.filePath);
       } catch (error) {
-        console.error("Error uploading certificate:", error);
+        throw error;
       }
     };
 

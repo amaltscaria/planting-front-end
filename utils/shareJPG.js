@@ -183,7 +183,7 @@ export const shareJPG = async (name, treeCount) => {
     // Return image data
     return canvas.toDataURL("image/jpeg", 0.95);
   } catch (error) {
-    console.error("Error generating certificate:", error);
+    throw error;
     throw error;
   }
 };
